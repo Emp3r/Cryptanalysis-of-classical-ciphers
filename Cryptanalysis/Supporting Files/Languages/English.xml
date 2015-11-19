@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language lang="English">
+  <letterFrequency>
+    <letter char="a">8.167</letter>
+    <letter char="b">1.492</letter>
+    <letter char="c">2.782</letter>
+    <letter char="d">4.253</letter>
+    <letter char="e">12.702</letter>
+    <letter char="f">2.228</letter>
+    <letter char="g">2.015</letter>
+    <letter char="h">6.094</letter>
+    <letter char="i">6.966</letter>
+    <letter char="j">0.153</letter>
+    <letter char="k">0.772</letter>
+    <letter char="l">4.025</letter>
+    <letter char="m">2.406</letter>
+    <letter char="n">6.749</letter>
+    <letter char="o">7.507</letter>
+    <letter char="p">1.929</letter>
+    <letter char="q">0.095</letter>
+    <letter char="r">5.987</letter>
+    <letter char="s">6.327</letter>
+    <letter char="t">9.056</letter>
+    <letter char="u">2.758</letter>
+    <letter char="v">0.978</letter>
+    <letter char="w">2.361</letter>
+    <letter char="x">0.150</letter>
+    <letter char="y">1.974</letter>
+    <letter char="z">0.074</letter>
+  </letterFrequency>
+  <mostUsedWords>
+    <word>the</word>
+    <word>are</word>
+    <word>to</word>
+    <word>of</word>
+    <word>and</word>
+    <word>in</word>
+    <word>that</word>
+    <word>have</word>
+    <word>it</word>
+    <word>for</word>
+    <word>not</word>
+    <word>on</word>
+    <word>with</word>
+    <word>he</word>
+    <word>as</word>
+    <word>you</word>
+    <word>do</word>
+    <word>at</word>
+    <word>this</word>
+    <word>but</word>
+    <word>his</word>
+    <word>by</word>
+    <word>from</word>
+    <word>they</word>
+    <word>we</word>
+    <word>say</word>
+    <word>her</word>
+    <word>she</word>
+    <word>or</word>
+    <word>an</word>
+    <word>will</word>
+    <word>my</word>
+    <word>one</word>
+    <word>all</word>
+    <word>would</word>
+    <word>there</word>
+    <word>their</word>
+    <word>what</word>
+    <word>so</word>
+    <word>up</word>
+    <word>out</word>
+    <word>if</word>
+    <word>about</word>
+    <word>who</word>
+    <word>get</word>
+    <word>which</word>
+    <word>go</word>
+    <word>me</word>
+    <word>when</word>
+    <word>make</word>
+    <word>can</word>
+    <word>like</word>
+    <word>time</word>
+    <word>no</word>
+    <word>just</word>
+    <word>him</word>
+    <word>know</word>
+    <word>take</word>
+    <word>people</word>
+    <word>into</word>
+    <word>year</word>
+    <word>your</word>
+    <word>good</word>
+    <word>some</word>
+    <word>could</word>
+    <word>them</word>
+    <word>see</word>
+    <word>other</word>
+    <word>than</word>
+    <word>then</word>
+    <word>now</word>
+    <word>look</word>
+    <word>only</word>
+    <word>come</word>
+    <word>its</word>
+    <word>over</word>
+    <word>think</word>
+    <word>also</word>
+    <word>back</word>
+    <word>after</word>
+    <word>use</word>
+    <word>two</word>
+    <word>how</word>
+    <word>our</word>
+    <word>work</word>
+    <word>first</word>
+    <word>well</word>
+    <word>way</word>
+    <word>even</word>
+    <word>new</word>
+    <word>want</word>
+    <word>because</word>
+    <word>any</word>
+    <word>these</word>
+    <word>give</word>
+    <word>day</word>
+    <word>most</word>
+    <word>us</word>
+    <word>person</word>
+    <word>last</word>
+  </mostUsedWords>
+  <bigrams>
+    <bi>th</bi>
+    <bi>he</bi>
+    <bi>in</bi>
+    <bi>er</bi>
+    <bi>an</bi>
+    <bi>re</bi>
+    <bi>nd</bi>
+    <bi>at</bi>
+    <bi>on</bi>
+    <bi>nt</bi>
+    <bi>ha</bi>
+    <bi>es</bi>
+    <bi>st</bi>
+    <bi>en</bi>
+    <bi>ed</bi>
+    <bi>to</bi>
+    <bi>it</bi>
+    <bi>ou</bi>
+    <bi>ea</bi>
+    <bi>hi</bi>
+    <bi>is</bi>
+    <bi>or</bi>
+    <bi>ti</bi>
+    <bi>as</bi>
+    <bi>te</bi>
+    <bi>et</bi>
+    <bi>ng</bi>
+    <bi>of</bi>
+    <bi>al</bi>
+    <bi>de</bi>
+    <bi>se</bi>
+    <bi>le</bi>
+    <bi>sa</bi>
+    <bi>si</bi>
+    <bi>ar</bi>
+    <bi>ve</bi>
+    <bi>ra</bi>
+    <bi>ld</bi>
+    <bi>ur</bi>
+    <bi>io</bi>
+  </bigrams>
+  <trigrams>
+    <tri>the</tri>
+    <tri>and</tri>
+    <tri>ing</tri>
+    <tri>ion</tri>
+    <tri>tio</tri>
+    <tri>ent</tri>
+    <tri>ati</tri>
+    <tri>for</tri>
+    <tri>her</tri>
+    <tri>ter</tri>
+    <tri>hat</tri>
+    <tri>tha</tri>
+    <tri>ere</tri>
+    <tri>ate</tri>
+    <tri>his</tri>
+    <tri>con</tri>
+    <tri>res</tri>
+    <tri>ver</tri>
+    <tri>all</tri>
+    <tri>ons</tri>
+    <tri>nce</tri>
+    <tri>men</tri>
+    <tri>ith</tri>
+    <tri>ted</tri>
+    <tri>ers</tri>
+    <tri>pro</tri>
+    <tri>thi</tri>
+    <tri>wit</tri>
+    <tri>are</tri>
+    <tri>ess</tri>
+    <tri>not</tri>
+    <tri>ive</tri>
+    <tri>was</tri>
+    <tri>ect</tri>
+    <tri>rea</tri>
+    <tri>com</tri>
+    <tri>eve</tri>
+    <tri>per</tri>
+    <tri>int</tri>
+    <tri>est</tri>
+  </trigrams>
+</language>

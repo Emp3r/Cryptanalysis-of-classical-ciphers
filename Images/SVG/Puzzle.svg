@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-512,-0)">
+        <g id="Puzzle" transform="matrix(1,0,0,1,512,0)">
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="512" height="512"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.751301,0.751301,-0.751301,0.751301,255.811,-127.677)">
+                    <path d="M288.92,96L416,96L416,223.953C401.929,216.494 384.99,211.918 371.98,211.918C344.947,211.918 323,231.671 323,256C323,280.329 344.947,300.082 371.98,300.082C384.99,300.082 401.929,295.506 416,288.047L416,416L96,416L96,288.047C110.071,295.506 127.01,300.082 140.02,300.082C167.053,300.082 189,280.329 189,256C189,231.671 167.053,211.918 140.02,211.918C127.01,211.918 110.071,216.494 96,223.953L96,96L223.08,96C214.818,80.969 209.714,62.508 209.714,48.429C209.714,20.044 230.454,-3 256,-3C281.546,-3 302.286,20.044 302.286,48.429C302.286,62.508 297.182,80.969 288.92,96Z" style="fill:none;stroke-width:18.82px;stroke:black;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

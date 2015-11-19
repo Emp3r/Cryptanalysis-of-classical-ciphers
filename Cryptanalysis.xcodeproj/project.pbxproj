@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB14B5221AAB826000DBA610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5211AAB826000DBA610 /* AppDelegate.swift */; };
+		BB14B5291AAB826000DBA610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB14B5271AAB826000DBA610 /* Main.storyboard */; };
+		BB14B52B1AAB826000DBA610 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB14B52A1AAB826000DBA610 /* Images.xcassets */; };
+		BB14B53A1AAB826100DBA610 /* CryptanalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5391AAB826100DBA610 /* CryptanalysisTests.swift */; };
+		BB14B5581AAB861100DBA610 /* Caesar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B54F1AAB861100DBA610 /* Caesar.m */; };
+		BB14B5591AAB861100DBA610 /* Caesar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B54F1AAB861100DBA610 /* Caesar.m */; };
+		BB14B55A1AAB861100DBA610 /* Cipher.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5511AAB861100DBA610 /* Cipher.m */; };
+		BB14B55B1AAB861100DBA610 /* Cipher.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5511AAB861100DBA610 /* Cipher.m */; };
+		BB14B55C1AAB861100DBA610 /* Monoalphabetic.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5531AAB861100DBA610 /* Monoalphabetic.m */; };
+		BB14B55D1AAB861100DBA610 /* Monoalphabetic.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5531AAB861100DBA610 /* Monoalphabetic.m */; };
+		BB14B55E1AAB861100DBA610 /* Transposition.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5551AAB861100DBA610 /* Transposition.m */; };
+		BB14B55F1AAB861100DBA610 /* Transposition.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5551AAB861100DBA610 /* Transposition.m */; };
+		BB14B5601AAB861100DBA610 /* Vigenere.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5571AAB861100DBA610 /* Vigenere.m */; };
+		BB14B5611AAB861100DBA610 /* Vigenere.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5571AAB861100DBA610 /* Vigenere.m */; };
+		BB14B5641AAB865F00DBA610 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5631AAB865F00DBA610 /* Utils.m */; };
+		BB14B5691AAB867200DBA610 /* CaesarCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5661AAB867200DBA610 /* CaesarCrack.m */; };
+		BB14B56A1AAB867200DBA610 /* VigenereCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5681AAB867200DBA610 /* VigenereCrack.m */; };
+		BB14B56E1AAB868900DBA610 /* CryptanalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56B1AAB868900DBA610 /* CryptanalysisViewController.swift */; };
+		BB14B56F1AAB868900DBA610 /* EncryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56C1AAB868900DBA610 /* EncryptionViewController.swift */; };
+		BB14B5701AAB868900DBA610 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56D1AAB868900DBA610 /* SettingsViewController.swift */; };
+		BB3096911BE004510050A00C /* Spanish.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB3096901BE004510050A00C /* Spanish.xml */; };
+		BB40C8281BDE76140077D6EE /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB40C8271BDE76140077D6EE /* AboutAppViewController.swift */; };
+		BB4C15121BE2793F001C5DD8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C15111BE2793F001C5DD8 /* MainTabBarController.swift */; };
+		BB6357611BF259B500D064C2 /* MonoalphabeticCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6357601BF259B500D064C2 /* MonoalphabeticCrack.m */; };
+		BB6A0BE11BD576F5006ABC84 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A0BE01BD576F5006ABC84 /* LanguagesTableViewController.swift */; };
+		BB6A0F0F1BDFB95E00E2D262 /* French.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB6A0F0E1BDFB95E00E2D262 /* French.xml */; };
+		BB7846131BAB186C00469F7C /* LanguageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7846121BAB186C00469F7C /* LanguageParser.m */; };
+		BB8BD7A51BD26A4B0020D7F8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BB8BD7A41BD26A4B0020D7F8 /* background.png */; };
+		BB8EDC6D1B904CAC00C8DE10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8EDC6B1B904CAC00C8DE10 /* LaunchScreen.xib */; };
+		BBAC52D61BE0E7EE00144A6F /* German.xml in Resources */ = {isa = PBXBuildFile; fileRef = BBAC52D51BE0E7EE00144A6F /* German.xml */; };
+		BBAD0E5F1BEFA3900070D39F /* TranspositionCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAD0E5E1BEFA3900070D39F /* TranspositionCrack.m */; };
+		BBBC9D371BCD67A3005EFD61 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBC9D361BCD67A3005EFD61 /* ExplanationViewController.swift */; };
+		BBDC8CBE1BCECE5C001DCF52 /* Caesar.html in Resources */ = {isa = PBXBuildFile; fileRef = BBDC8CBA1BCECE5C001DCF52 /* Caesar.html */; };
+		BBDC8CBF1BCECE5C001DCF52 /* Monoalphabetic.html in Resources */ = {isa = PBXBuildFile; fileRef = BBDC8CBB1BCECE5C001DCF52 /* Monoalphabetic.html */; };
+		BBDC8CC01BCECE5C001DCF52 /* Transposition.html in Resources */ = {isa = PBXBuildFile; fileRef = BBDC8CBC1BCECE5C001DCF52 /* Transposition.html */; };
+		BBDC8CC11BCECE5C001DCF52 /* Vigenere.html in Resources */ = {isa = PBXBuildFile; fileRef = BBDC8CBD1BCECE5C001DCF52 /* Vigenere.html */; };
+		BBDC8CC61BCED1DD001DCF52 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = BBDC8CC51BCED1DD001DCF52 /* styles.css */; };
+		BBE2B0831BF63D6100FE2E74 /* Combinatorics.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE2B0821BF63D6100FE2E74 /* Combinatorics.m */; };
+		BBEB3FE11BA99CA4007BF802 /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = BBEB3FE01BA99CA4007BF802 /* Language.m */; };
+		BBEB3FE41BA99DFF007BF802 /* Czech.xml in Resources */ = {isa = PBXBuildFile; fileRef = BBEB3FE21BA99DFF007BF802 /* Czech.xml */; };
+		BBEB3FE51BA99DFF007BF802 /* English.xml in Resources */ = {isa = PBXBuildFile; fileRef = BBEB3FE31BA99DFF007BF802 /* English.xml */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB14B5341AAB826100DBA610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB14B5141AAB826000DBA610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB14B51B1AAB826000DBA610;
+			remoteInfo = Cryptanalysis;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BB14B51C1AAB826000DBA610 /* Cryptanalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptanalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB14B5211AAB826000DBA610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB14B5281AAB826000DBA610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB14B52A1AAB826000DBA610 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BB14B5331AAB826100DBA610 /* CryptanalysisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptanalysisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB14B5381AAB826100DBA610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB14B5391AAB826100DBA610 /* CryptanalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptanalysisTests.swift; sourceTree = "<group>"; };
+		BB14B5481AAB847F00DBA610 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		BB14B54E1AAB861100DBA610 /* Caesar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Caesar.h; path = Ciphers/Caesar.h; sourceTree = "<group>"; };
+		BB14B54F1AAB861100DBA610 /* Caesar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Caesar.m; path = Ciphers/Caesar.m; sourceTree = "<group>"; };
+		BB14B5501AAB861100DBA610 /* Cipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cipher.h; path = Ciphers/Cipher.h; sourceTree = "<group>"; };
+		BB14B5511AAB861100DBA610 /* Cipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cipher.m; path = Ciphers/Cipher.m; sourceTree = "<group>"; };
+		BB14B5521AAB861100DBA610 /* Monoalphabetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Monoalphabetic.h; path = Ciphers/Monoalphabetic.h; sourceTree = "<group>"; };
+		BB14B5531AAB861100DBA610 /* Monoalphabetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Monoalphabetic.m; path = Ciphers/Monoalphabetic.m; sourceTree = "<group>"; };
+		BB14B5541AAB861100DBA610 /* Transposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transposition.h; path = Ciphers/Transposition.h; sourceTree = "<group>"; };
+		BB14B5551AAB861100DBA610 /* Transposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transposition.m; path = Ciphers/Transposition.m; sourceTree = "<group>"; };
+		BB14B5561AAB861100DBA610 /* Vigenere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vigenere.h; path = Ciphers/Vigenere.h; sourceTree = "<group>"; };
+		BB14B5571AAB861100DBA610 /* Vigenere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vigenere.m; path = Ciphers/Vigenere.m; sourceTree = "<group>"; };
+		BB14B5621AAB865F00DBA610 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utilities/Utils.h; sourceTree = "<group>"; };
+		BB14B5631AAB865F00DBA610 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utilities/Utils.m; sourceTree = "<group>"; };
+		BB14B5651AAB867200DBA610 /* CaesarCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaesarCrack.h; path = Cracking/CaesarCrack.h; sourceTree = "<group>"; };
+		BB14B5661AAB867200DBA610 /* CaesarCrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaesarCrack.m; path = Cracking/CaesarCrack.m; sourceTree = "<group>"; };
+		BB14B5671AAB867200DBA610 /* VigenereCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VigenereCrack.h; path = Cracking/VigenereCrack.h; sourceTree = "<group>"; };
+		BB14B5681AAB867200DBA610 /* VigenereCrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VigenereCrack.m; path = Cracking/VigenereCrack.m; sourceTree = "<group>"; };
+		BB14B56B1AAB868900DBA610 /* CryptanalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CryptanalysisViewController.swift; path = ViewControllers/CryptanalysisViewController.swift; sourceTree = "<group>"; };
+		BB14B56C1AAB868900DBA610 /* EncryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncryptionViewController.swift; path = ViewControllers/EncryptionViewController.swift; sourceTree = "<group>"; };
+		BB14B56D1AAB868900DBA610 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		BB14B5AA1AAB875B00DBA610 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
+		BB3096901BE004510050A00C /* Spanish.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Spanish.xml; path = "Supporting Files/Languages/Spanish.xml"; sourceTree = "<group>"; };
+		BB40C8271BDE76140077D6EE /* AboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutAppViewController.swift; path = ViewControllers/AboutAppViewController.swift; sourceTree = "<group>"; };
+		BB4C15111BE2793F001C5DD8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ViewControllers/MainTabBarController.swift; sourceTree = "<group>"; };
+		BB63575F1BF259B500D064C2 /* MonoalphabeticCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonoalphabeticCrack.h; path = Cracking/MonoalphabeticCrack.h; sourceTree = "<group>"; };
+		BB6357601BF259B500D064C2 /* MonoalphabeticCrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MonoalphabeticCrack.m; path = Cracking/MonoalphabeticCrack.m; sourceTree = "<group>"; };
+		BB6A0BE01BD576F5006ABC84 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = ViewControllers/LanguagesTableViewController.swift; sourceTree = "<group>"; };
+		BB6A0F0E1BDFB95E00E2D262 /* French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = French.xml; path = "Supporting Files/Languages/French.xml"; sourceTree = "<group>"; };
+		BB7846111BAB186C00469F7C /* LanguageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LanguageParser.h; path = Utilities/LanguageParser.h; sourceTree = "<group>"; };
+		BB7846121BAB186C00469F7C /* LanguageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LanguageParser.m; path = Utilities/LanguageParser.m; sourceTree = "<group>"; };
+		BB8BD7A41BD26A4B0020D7F8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Supporting Files/Images/background.png"; sourceTree = "<group>"; };
+		BB8EDC6C1B904CAC00C8DE10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Cryptanalysis/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BBAC52D51BE0E7EE00144A6F /* German.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = German.xml; path = "Supporting Files/Languages/German.xml"; sourceTree = "<group>"; };
+		BBAD0E5D1BEFA3900070D39F /* TranspositionCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TranspositionCrack.h; path = Cracking/TranspositionCrack.h; sourceTree = "<group>"; };
+		BBAD0E5E1BEFA3900070D39F /* TranspositionCrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TranspositionCrack.m; path = Cracking/TranspositionCrack.m; sourceTree = "<group>"; };
+		BBBC9D361BCD67A3005EFD61 /* ExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExplanationViewController.swift; path = ViewControllers/ExplanationViewController.swift; sourceTree = "<group>"; };
+		BBDC8CBA1BCECE5C001DCF52 /* Caesar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Caesar.html; path = Explanations/Caesar.html; sourceTree = "<group>"; };
+		BBDC8CBB1BCECE5C001DCF52 /* Monoalphabetic.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Monoalphabetic.html; path = Explanations/Monoalphabetic.html; sourceTree = "<group>"; };
+		BBDC8CBC1BCECE5C001DCF52 /* Transposition.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Transposition.html; path = Explanations/Transposition.html; sourceTree = "<group>"; };
+		BBDC8CBD1BCECE5C001DCF52 /* Vigenere.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Vigenere.html; path = Explanations/Vigenere.html; sourceTree = "<group>"; };
+		BBDC8CC51BCED1DD001DCF52 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = styles.css; path = Explanations/styles.css; sourceTree = "<group>"; };
+		BBE2B0811BF63D6100FE2E74 /* Combinatorics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Combinatorics.h; path = Utilities/Combinatorics.h; sourceTree = "<group>"; };
+		BBE2B0821BF63D6100FE2E74 /* Combinatorics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Combinatorics.m; path = Utilities/Combinatorics.m; sourceTree = "<group>"; };
+		BBEB3FDF1BA99CA4007BF802 /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Language.h; path = Utilities/Language.h; sourceTree = "<group>"; };
+		BBEB3FE01BA99CA4007BF802 /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Language.m; path = Utilities/Language.m; sourceTree = "<group>"; };
+		BBEB3FE21BA99DFF007BF802 /* Czech.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Czech.xml; path = "Supporting Files/Languages/Czech.xml"; sourceTree = "<group>"; };
+		BBEB3FE31BA99DFF007BF802 /* English.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English.xml; path = "Supporting Files/Languages/English.xml"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB14B5191AAB826000DBA610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB14B5301AAB826100DBA610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB14B5131AAB826000DBA610 = {
+			isa = PBXGroup;
+			children = (
+				BB14B51E1AAB826000DBA610 /* Cryptanalysis */,
+				BB14B5361AAB826100DBA610 /* CryptanalysisTests */,
+				BB14B51D1AAB826000DBA610 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB14B51D1AAB826000DBA610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B51C1AAB826000DBA610 /* Cryptanalysis.app */,
+				BB14B5331AAB826100DBA610 /* CryptanalysisTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB14B51E1AAB826000DBA610 /* Cryptanalysis */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5471AAB83CB00DBA610 /* ViewControllers */,
+				BB14B5431AAB833B00DBA610 /* Ciphers */,
+				BB14B5441AAB835200DBA610 /* Cracking */,
+				BB14B5461AAB839300DBA610 /* Utilities */,
+				BB14B5211AAB826000DBA610 /* AppDelegate.swift */,
+				BB14B5271AAB826000DBA610 /* Main.storyboard */,
+				BB8EDC6B1B904CAC00C8DE10 /* LaunchScreen.xib */,
+				BB14B52A1AAB826000DBA610 /* Images.xcassets */,
+				BBDC8CB91BCECE2F001DCF52 /* Explanations */,
+				BB14B51F1AAB826000DBA610 /* Supporting Files */,
+			);
+			path = Cryptanalysis;
+			sourceTree = "<group>";
+		};
+		BB14B51F1AAB826000DBA610 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5AA1AAB875B00DBA610 /* Bridging-Header.h */,
+				BB14B5481AAB847F00DBA610 /* Info.plist */,
+				BB25208F1BD6BA530084D179 /* Languages */,
+				BB8BD7A11BD267310020D7F8 /* Images */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB14B5361AAB826100DBA610 /* CryptanalysisTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5391AAB826100DBA610 /* CryptanalysisTests.swift */,
+				BB14B5371AAB826100DBA610 /* Supporting Files */,
+			);
+			path = CryptanalysisTests;
+			sourceTree = "<group>";
+		};
+		BB14B5371AAB826100DBA610 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5381AAB826100DBA610 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB14B5431AAB833B00DBA610 /* Ciphers */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5501AAB861100DBA610 /* Cipher.h */,
+				BB14B5511AAB861100DBA610 /* Cipher.m */,
+				BB14B54E1AAB861100DBA610 /* Caesar.h */,
+				BB14B54F1AAB861100DBA610 /* Caesar.m */,
+				BB14B5561AAB861100DBA610 /* Vigenere.h */,
+				BB14B5571AAB861100DBA610 /* Vigenere.m */,
+				BB14B5521AAB861100DBA610 /* Monoalphabetic.h */,
+				BB14B5531AAB861100DBA610 /* Monoalphabetic.m */,
+				BB14B5541AAB861100DBA610 /* Transposition.h */,
+				BB14B5551AAB861100DBA610 /* Transposition.m */,
+			);
+			name = Ciphers;
+			sourceTree = "<group>";
+		};
+		BB14B5441AAB835200DBA610 /* Cracking */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5651AAB867200DBA610 /* CaesarCrack.h */,
+				BB14B5661AAB867200DBA610 /* CaesarCrack.m */,
+				BB14B5671AAB867200DBA610 /* VigenereCrack.h */,
+				BB14B5681AAB867200DBA610 /* VigenereCrack.m */,
+				BB63575F1BF259B500D064C2 /* MonoalphabeticCrack.h */,
+				BB6357601BF259B500D064C2 /* MonoalphabeticCrack.m */,
+				BBAD0E5D1BEFA3900070D39F /* TranspositionCrack.h */,
+				BBAD0E5E1BEFA3900070D39F /* TranspositionCrack.m */,
+			);
+			name = Cracking;
+			sourceTree = "<group>";
+		};
+		BB14B5461AAB839300DBA610 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BB14B5621AAB865F00DBA610 /* Utils.h */,
+				BB14B5631AAB865F00DBA610 /* Utils.m */,
+				BBEB3FDF1BA99CA4007BF802 /* Language.h */,
+				BBEB3FE01BA99CA4007BF802 /* Language.m */,
+				BB7846111BAB186C00469F7C /* LanguageParser.h */,
+				BB7846121BAB186C00469F7C /* LanguageParser.m */,
+				BBE2B0811BF63D6100FE2E74 /* Combinatorics.h */,
+				BBE2B0821BF63D6100FE2E74 /* Combinatorics.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		BB14B5471AAB83CB00DBA610 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB4C15111BE2793F001C5DD8 /* MainTabBarController.swift */,
+				BB14B56C1AAB868900DBA610 /* EncryptionViewController.swift */,
+				BB14B56B1AAB868900DBA610 /* CryptanalysisViewController.swift */,
+				BBBC9D361BCD67A3005EFD61 /* ExplanationViewController.swift */,
+				BB14B56D1AAB868900DBA610 /* SettingsViewController.swift */,
+				BB6A0BE01BD576F5006ABC84 /* LanguagesTableViewController.swift */,
+				BB40C8271BDE76140077D6EE /* AboutAppViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB25208F1BD6BA530084D179 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB3FE21BA99DFF007BF802 /* Czech.xml */,
+				BBEB3FE31BA99DFF007BF802 /* English.xml */,
+				BBAC52D51BE0E7EE00144A6F /* German.xml */,
+				BB6A0F0E1BDFB95E00E2D262 /* French.xml */,
+				BB3096901BE004510050A00C /* Spanish.xml */,
+			);
+			name = Languages;
+			sourceTree = "<group>";
+		};
+		BB8BD7A11BD267310020D7F8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BB8BD7A41BD26A4B0020D7F8 /* background.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		BBDC8CB91BCECE2F001DCF52 /* Explanations */ = {
+			isa = PBXGroup;
+			children = (
+				BBDC8CC51BCED1DD001DCF52 /* styles.css */,
+				BBDC8CBA1BCECE5C001DCF52 /* Caesar.html */,
+				BBDC8CBB1BCECE5C001DCF52 /* Monoalphabetic.html */,
+				BBDC8CBC1BCECE5C001DCF52 /* Transposition.html */,
+				BBDC8CBD1BCECE5C001DCF52 /* Vigenere.html */,
+			);
+			name = Explanations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB14B51B1AAB826000DBA610 /* Cryptanalysis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB14B53D1AAB826100DBA610 /* Build configuration list for PBXNativeTarget "Cryptanalysis" */;
+			buildPhases = (
+				BB14B5181AAB826000DBA610 /* Sources */,
+				BB14B5191AAB826000DBA610 /* Frameworks */,
+				BB14B51A1AAB826000DBA610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cryptanalysis;
+			productName = Cryptanalysis;
+			productReference = BB14B51C1AAB826000DBA610 /* Cryptanalysis.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB14B5321AAB826100DBA610 /* CryptanalysisTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB14B5401AAB826100DBA610 /* Build configuration list for PBXNativeTarget "CryptanalysisTests" */;
+			buildPhases = (
+				BB14B52F1AAB826100DBA610 /* Sources */,
+				BB14B5301AAB826100DBA610 /* Frameworks */,
+				BB14B5311AAB826100DBA610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB14B5351AAB826100DBA610 /* PBXTargetDependency */,
+			);
+			name = CryptanalysisTests;
+			productName = CryptanalysisTests;
+			productReference = BB14B5331AAB826100DBA610 /* CryptanalysisTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB14B5141AAB826000DBA610 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = JP;
+				TargetAttributes = {
+					BB14B51B1AAB826000DBA610 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7Y2MZFGQSE;
+					};
+					BB14B5321AAB826100DBA610 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = BB14B51B1AAB826000DBA610;
+					};
+				};
+			};
+			buildConfigurationList = BB14B5171AAB826000DBA610 /* Build configuration list for PBXProject "Cryptanalysis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB14B5131AAB826000DBA610;
+			productRefGroup = BB14B51D1AAB826000DBA610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB14B51B1AAB826000DBA610 /* Cryptanalysis */,
+				BB14B5321AAB826100DBA610 /* CryptanalysisTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB14B51A1AAB826000DBA610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB14B5291AAB826000DBA610 /* Main.storyboard in Resources */,
+				BBEB3FE51BA99DFF007BF802 /* English.xml in Resources */,
+				BBDC8CC01BCECE5C001DCF52 /* Transposition.html in Resources */,
+				BBDC8CC61BCED1DD001DCF52 /* styles.css in Resources */,
+				BBEB3FE41BA99DFF007BF802 /* Czech.xml in Resources */,
+				BBDC8CBE1BCECE5C001DCF52 /* Caesar.html in Resources */,
+				BB8EDC6D1B904CAC00C8DE10 /* LaunchScreen.xib in Resources */,
+				BBDC8CC11BCECE5C001DCF52 /* Vigenere.html in Resources */,
+				BB3096911BE004510050A00C /* Spanish.xml in Resources */,
+				BBAC52D61BE0E7EE00144A6F /* German.xml in Resources */,
+				BBDC8CBF1BCECE5C001DCF52 /* Monoalphabetic.html in Resources */,
+				BB8BD7A51BD26A4B0020D7F8 /* background.png in Resources */,
+				BB14B52B1AAB826000DBA610 /* Images.xcassets in Resources */,
+				BB6A0F0F1BDFB95E00E2D262 /* French.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB14B5311AAB826100DBA610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB14B5181AAB826000DBA610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB40C8281BDE76140077D6EE /* AboutAppViewController.swift in Sources */,
+				BB14B5641AAB865F00DBA610 /* Utils.m in Sources */,
+				BB4C15121BE2793F001C5DD8 /* MainTabBarController.swift in Sources */,
+				BB14B56A1AAB867200DBA610 /* VigenereCrack.m in Sources */,
+				BBAD0E5F1BEFA3900070D39F /* TranspositionCrack.m in Sources */,
+				BBEB3FE11BA99CA4007BF802 /* Language.m in Sources */,
+				BB14B5221AAB826000DBA610 /* AppDelegate.swift in Sources */,
+				BB14B5601AAB861100DBA610 /* Vigenere.m in Sources */,
+				BB14B5581AAB861100DBA610 /* Caesar.m in Sources */,
+				BB7846131BAB186C00469F7C /* LanguageParser.m in Sources */,
+				BB6357611BF259B500D064C2 /* MonoalphabeticCrack.m in Sources */,
+				BBE2B0831BF63D6100FE2E74 /* Combinatorics.m in Sources */,
+				BB6A0BE11BD576F5006ABC84 /* LanguagesTableViewController.swift in Sources */,
+				BB14B55C1AAB861100DBA610 /* Monoalphabetic.m in Sources */,
+				BB14B56E1AAB868900DBA610 /* CryptanalysisViewController.swift in Sources */,
+				BB14B5701AAB868900DBA610 /* SettingsViewController.swift in Sources */,
+				BB14B5691AAB867200DBA610 /* CaesarCrack.m in Sources */,
+				BB14B56F1AAB868900DBA610 /* EncryptionViewController.swift in Sources */,
+				BB14B55E1AAB861100DBA610 /* Transposition.m in Sources */,
+				BB14B55A1AAB861100DBA610 /* Cipher.m in Sources */,
+				BBBC9D371BCD67A3005EFD61 /* ExplanationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB14B52F1AAB826100DBA610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB14B5591AAB861100DBA610 /* Caesar.m in Sources */,
+				BB14B55D1AAB861100DBA610 /* Monoalphabetic.m in Sources */,
+				BB14B5611AAB861100DBA610 /* Vigenere.m in Sources */,
+				BB14B55F1AAB861100DBA610 /* Transposition.m in Sources */,
+				BB14B55B1AAB861100DBA610 /* Cipher.m in Sources */,
+				BB14B53A1AAB826100DBA610 /* CryptanalysisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB14B5351AAB826100DBA610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB14B51B1AAB826000DBA610 /* Cryptanalysis */;
+			targetProxy = BB14B5341AAB826100DBA610 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB14B5271AAB826000DBA610 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB14B5281AAB826000DBA610 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB8EDC6B1B904CAC00C8DE10 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB8EDC6C1B904CAC00C8DE10 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB14B53B1AAB826100DBA610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB14B53C1AAB826100DBA610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB14B53E1AAB826100DBA610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = CryptanalysisIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Cryptanalysis/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JP.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Cryptanalysis/Supporting Files/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB14B53F1AAB826100DBA610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = CryptanalysisIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/Cryptanalysis/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JP.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Cryptanalysis/Supporting Files/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB14B5411AAB826100DBA610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CryptanalysisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JP.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryptanalysis.app/Cryptanalysis";
+			};
+			name = Debug;
+		};
+		BB14B5421AAB826100DBA610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = CryptanalysisTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JP.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cryptanalysis.app/Cryptanalysis";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB14B5171AAB826000DBA610 /* Build configuration list for PBXProject "Cryptanalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB14B53B1AAB826100DBA610 /* Debug */,
+				BB14B53C1AAB826100DBA610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB14B53D1AAB826100DBA610 /* Build configuration list for PBXNativeTarget "Cryptanalysis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB14B53E1AAB826100DBA610 /* Debug */,
+				BB14B53F1AAB826100DBA610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB14B5401AAB826100DBA610 /* Build configuration list for PBXNativeTarget "CryptanalysisTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB14B5411AAB826100DBA610 /* Debug */,
+				BB14B5421AAB826100DBA610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB14B5141AAB826000DBA610 /* Project object */;
+}

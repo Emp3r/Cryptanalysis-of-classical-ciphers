@@ -1,0 +1,32 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #dd2d36;
+  text-align: center;
+}
+
+h3 {
+  padding-left: 12px;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  border-left: solid 3px #dd2d36;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 300;
+}

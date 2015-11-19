@@ -1,0 +1,54 @@
+
+/* Class = "UIViewController"; title = "Cryptanalysis"; ObjectID = "8rJ-Kc-sve"; */
+"8rJ-Kc-sve.title" = "Cryptanalysis";
+
+/* Class = "UIViewController"; title = "Encryption"; ObjectID = "9pv-A4-QxB"; */
+"9pv-A4-QxB.title" = "Encryption";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "9zD-BP-5za"; */
+"9zD-BP-5za.title" = "Settings";
+
+/* Class = "UILabel"; text = "open text"; ObjectID = "Bbo-Tr-hbF"; */
+"Bbo-Tr-hbF.text" = "open text";
+
+/* Class = "UILabel"; text = "coded text"; ObjectID = "FRk-Bo-cy8"; */
+"FRk-Bo-cy8.text" = "coded text";
+
+/* Class = "UILabel"; text = "coded text"; ObjectID = "G7G-zZ-6Py"; */
+"G7G-zZ-6Py.text" = "coded text";
+
+/* Class = "UIButton"; normalTitle = "decrypt"; ObjectID = "K5H-Iq-XDG"; */
+"K5H-Iq-XDG.normalTitle" = "decrypt";
+
+/* Class = "UILabel"; text = "guessed decryption"; ObjectID = "Mfi-jy-ouz"; */
+"Mfi-jy-ouz.text" = "guessed decryption";
+
+/* Class = "UILabel"; text = "choose cipher"; ObjectID = "S4j-Rs-8Ci"; */
+"S4j-Rs-8Ci.text" = "choose cipher";
+
+/* Class = "UILabel"; text = "type of attack"; ObjectID = "Yus-FK-qZt"; */
+"Yus-FK-qZt.text" = "type of attack";
+
+/* Class = "UITabBarItem"; title = "Encryption"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Encryption";
+
+/* Class = "UIButton"; normalTitle = "crack"; ObjectID = "b8Q-fD-zwd"; */
+"b8Q-fD-zwd.normalTitle" = "crack";
+
+/* Class = "UITabBarItem"; title = "Cryptanalysis"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Cryptanalysis";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "ggA-kG-pWY"; */
+"ggA-kG-pWY.title" = "Settings";
+
+/* Class = "UILabel"; text = "key"; ObjectID = "gkk-NQ-GSQ"; */
+"gkk-NQ-GSQ.text" = "key";
+
+/* Class = "UILabel"; text = "guessed key"; ObjectID = "kUn-E0-xlV"; */
+"kUn-E0-xlV.text" = "guessed key";
+
+/* Class = "UIButton"; normalTitle = "encrypt"; ObjectID = "rJQ-Vl-aj0"; */
+"rJQ-Vl-aj0.normalTitle" = "encrypt";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "xY7-44-kX2"; */
+"xY7-44-kX2.text" = "description";
