@@ -1,10 +1,11 @@
 import Foundation
 import UIKit
 
-class ExplanationViewController: UIViewController, UIPickerViewDelegate {
+class ExplanationViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var bgView: UIView!
     @IBOutlet var explanationWebView: UIWebView!
+    @IBOutlet var loader: UIActivityIndicatorView!
     
     var chosenCipher: Int = 0
     var cipherData = []
@@ -12,12 +13,11 @@ class ExplanationViewController: UIViewController, UIPickerViewDelegate {
     
     func fillExplanation() {
         let cipher = cipherData[chosenCipher] as! String
-        let fileUrl = NSBundle.mainBundle().URLForResource(cipher, withExtension:"html")
+        let fileUrl = NSBundle.mainBundle().URLForResource(cipher, withExtension:"html", subdirectory:"Explanations")
         
         let urlRequest = NSURLRequest(URL: fileUrl!)
         
         explanationWebView.loadRequest(urlRequest)
-        
     }
     
     func updateChosenCipher() -> Bool {
@@ -27,8 +27,7 @@ class ExplanationViewController: UIViewController, UIPickerViewDelegate {
             
             if chosenCipher == cipher as! Int {
                 return false
-            }
-            else {
+            } else {
                 chosenCipher = cipher as! Int
                 return true
             }
@@ -39,6 +38,9 @@ class ExplanationViewController: UIViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         cipherData = Utils.availableCiphersNormalized()
         super.viewDidLoad()
+        
+        explanationWebView.delegate = self
+        explanationWebView.hidden = true
         
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
@@ -62,5 +64,16 @@ class ExplanationViewController: UIViewController, UIPickerViewDelegate {
         
     }
     
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        webView.hidden = true
+        loader.hidden = false
+        loader.startAnimating()
+        return true;
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+        webView.hidden = false
+        loader.hidden = true
+        loader.stopAnimating()
+    }
     
 }

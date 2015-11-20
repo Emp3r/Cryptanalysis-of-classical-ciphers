@@ -21,11 +21,11 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
         let text = txtToCrack.text
         
         if !text.isEmpty {
-            let keyTip = chosenAttackFunction(text)
+            let keyGuess = chosenAttackFunction(text)
             
             keyView.alpha = 0
-            txtKeyGuess.text = keyTip
-            txtGuessed.text = chosenCipherClass.decrypt(text, with: keyTip)
+            txtKeyGuess.text = keyGuess
+            txtGuessed.text = chosenCipherClass.decrypt(text, with: keyGuess)
         
             txtKeyGuess.userInteractionEnabled = true
             txtGuessed.userInteractionEnabled = true
@@ -113,28 +113,28 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
         switch chosenCipher {
         case 0:
             switch chosenAttack {
-            case 0: chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyTip
-            case 1: chosenAttackFunction = CaesarCrack.realWordsAnalysisKeyTip
-            // case 2: chosenAttackFunction = CaesarCrack.triangleAttackKeyTip
-            default: chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyTip
+            case 0: chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyGuess
+            case 1: chosenAttackFunction = CaesarCrack.realWordsAnalysisKeyGuess
+            case 2: chosenAttackFunction = CaesarCrack.lettersDistanceKeyGuess
+            default: chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyGuess
             }
         case 1:
             switch chosenAttack {
-            case 0: chosenAttackFunction = VigenereCrack.breakWithLetterFrequency
-            // case 1: chosenAttackFunction = VigenereCrack.triangleAttackKeyTip
-            default: chosenAttackFunction = VigenereCrack.breakWithLetterFrequency
+            case 0: chosenAttackFunction = VigenereCrack.frequencyAnalysisKeyGuess
+            case 1: chosenAttackFunction = VigenereCrack.lettersDistanceKeyGuess
+            default: chosenAttackFunction = VigenereCrack.frequencyAnalysisKeyGuess
             }
         case 2:
             print("")
             // chosenAttackFunction = VigenereCrack.breakWithLetterFrequency
         case 3:
             switch chosenAttack {
-            // case 0: chosenAttackFunction = TranspositionCrack.findWordKeyTip
-            case 1: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyTip
-            default: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyTip
+            // case 0: chosenAttackFunction = TranspositionCrack.findWordKeyGuess
+            case 1: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyGuess
+            default: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyGuess
             }
         default:
-            chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyTip
+            chosenAttackFunction = CaesarCrack.frequencyAnalysisKeyGuess
         }
     }
     

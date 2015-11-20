@@ -6,10 +6,10 @@
 
 @implementation CaesarCrack
 
-
+// frequency analysis
 + (char)guessKeyLetterFrequency:(NSString *)text {
     
-    char bestTip = 'a';
+    char bestGuess = 'a';
     float smallestDifference = FLT_MAX;
     
     for (char i = 0; i < LETTER_COUNT; i++) {
@@ -20,26 +20,26 @@
         
         if (difference < smallestDifference) {
             smallestDifference = difference;
-            bestTip = 'a' + i;
+            bestGuess = 'a' + i;
         }
     }
-    return bestTip;
+    return bestGuess;
 }
 
-+ (NSString *)frequencyAnalysisKeyTip:(NSString *)text {
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text {
     
     NSString * normalizedString = [Utils normalize:text];
-    char keyTip = [CaesarCrack guessKeyLetterFrequency:normalizedString];
+    char keyGuess = [CaesarCrack guessKeyLetterFrequency:normalizedString];
     
-    return [NSString stringWithFormat:@"%c", keyTip];
+    return [NSString stringWithFormat:@"%c", keyGuess];
 }
 
 + (NSString *)breakWithLetterFrequency:(NSString *)text {
     
     NSString * normalizedString = [Utils normalize:text];
-    char keyTip = [CaesarCrack guessKeyLetterFrequency:normalizedString];
+    char keyGuess = [CaesarCrack guessKeyLetterFrequency:normalizedString];
     
-    return [Caesar decrypt:text withChar:keyTip];
+    return [Caesar decrypt:text withChar:keyGuess];
 }
 
 
@@ -47,7 +47,7 @@
 // real words analysis
 + (char)guessKeyRealWords:(NSString *)text {
     
-    char bestTip = 'a';
+    char bestGuess = 'a';
     int bestValue = 0;
     
     for (char i = 0; i < LETTER_COUNT; i++) {
@@ -57,31 +57,31 @@
         
         if (realWordsCount > bestValue) {
             bestValue = realWordsCount;
-            bestTip = 'a' + i;
+            bestGuess = 'a' + i;
         }
     }
-    return bestTip;
+    return bestGuess;
 }
 
-+ (NSString *)realWordsAnalysisKeyTip:(NSString *)text {
++ (NSString *)realWordsAnalysisKeyGuess:(NSString *)text {
     
     NSString * normalizedString = [Utils normalize:text];
-    char keyTip = [CaesarCrack guessKeyRealWords:normalizedString];
+    char keyGuess = [CaesarCrack guessKeyRealWords:normalizedString];
     
-    return [NSString stringWithFormat:@"%c", keyTip];
+    return [NSString stringWithFormat:@"%c", keyGuess];
 }
 
 + (NSString *)breakWithRealWords:(NSString *)text {
     
-    char keyTip = [CaesarCrack guessKeyRealWords:text];
+    char keyGuess = [CaesarCrack guessKeyRealWords:text];
     
-    return [Caesar decrypt:text withChar:keyTip];
+    return [Caesar decrypt:text withChar:keyGuess];
 }
 
 
 
 // frequent letters distance attack
-+ (NSString *)lettersDistanceKeyTip:(NSString *)text {
++ (NSString *)lettersDistanceKeyGuess:(NSString *)text {
     
     int k = 3, n = 7;
     
@@ -124,7 +124,7 @@
 
 + (bool)hasSameMinimalDistance:(NSArray *)array1 and:(NSArray *)array2 {
     
-    int count = MIN([array1 count], [array2 count]);
+    int count = (int)MIN([array1 count], [array2 count]);
     bool found = true;
     
     for (int i = 0; i < count; i++) {

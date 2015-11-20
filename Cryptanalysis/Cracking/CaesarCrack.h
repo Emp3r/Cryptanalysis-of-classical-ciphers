@@ -7,7 +7,7 @@
 
 + (NSString *)breakWithLetterFrequency:(NSString *)text;
 
-+ (NSString *)frequencyAnalysisKeyTip:(NSString *)text;
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text;
 
 
 // real words analysis
@@ -15,11 +15,11 @@
 
 + (NSString *)breakWithRealWords:(NSString *)text;
 
-+ (NSString *)realWordsAnalysisKeyTip:(NSString *)text;
++ (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;
 
 
-// frequent letters distance attack
-+ (NSString *)lettersDistanceKeyTip:(NSString *)text;
+// frequent letters minimal distance attack
++ (NSString *)lettersDistanceKeyGuess:(NSString *)text;
 
 + (NSArray *)findSameDistanceCombination:(NSArray *)chars in:(NSArray *)combinations;
 

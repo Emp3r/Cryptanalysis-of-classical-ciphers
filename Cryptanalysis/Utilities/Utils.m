@@ -66,7 +66,7 @@
     
     NSMutableArray * result = [[NSMutableArray alloc] init];
     NSArray * counts = [Utils lettersCount:string];
-    int length = [[Utils normalize:string] length];
+    int length = (int)[[Utils normalize:string] length];
     
     for (NSNumber * number in counts) {
         float letterPercent = ([number floatValue] / length) * 100;

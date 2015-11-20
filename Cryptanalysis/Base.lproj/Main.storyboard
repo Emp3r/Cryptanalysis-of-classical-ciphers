@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Encryption-->
@@ -64,7 +64,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="K5H-Iq-XDG">
-                                <rect key="frame" x="16" y="456" width="138" height="34"/>
+                                <rect key="frame" x="16" y="458" width="138" height="34"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rJQ-Vl-aj0">
-                                <rect key="frame" x="166" y="456" width="138" height="34"/>
+                                <rect key="frame" x="166" y="458" width="138" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -102,6 +102,14 @@
                                     <action selector="btnRandomKey" destination="9pv-A4-QxB" eventType="touchUpInside" id="BfU-QK-4AK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up" id="44u-FP-p69">
+                                <rect key="frame" x="16" y="458" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down" id="Ch3-90-iX2">
+                                <rect key="frame" x="270" y="458" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -109,12 +117,14 @@
                     <connections>
                         <outlet property="bgView" destination="tsR-hK-woN" id="5kA-Vk-Z1y"/>
                         <outlet property="decryptButton" destination="K5H-Iq-XDG" id="rrJ-8a-CgJ"/>
+                        <outlet property="downArrowEncrypt" destination="Ch3-90-iX2" id="YT1-5s-cFw"/>
                         <outlet property="encryptButton" destination="rJQ-Vl-aj0" id="UhM-SE-8w1"/>
                         <outlet property="keyView" destination="jhJ-0W-kWt" id="lSd-Nb-Vgv"/>
                         <outlet property="randomKeyButton" destination="Wdg-aT-0OZ" id="G6K-qc-yBE"/>
                         <outlet property="txtCodedText" destination="pG3-fG-SqO" id="Ccx-fu-NIj"/>
                         <outlet property="txtKey" destination="PYp-MY-uzt" id="RXG-L4-u3l"/>
                         <outlet property="txtOpenText" destination="Axa-dz-389" id="AKX-RJ-6a3"/>
+                        <outlet property="upArrowDecrypt" destination="44u-FP-p69" id="KSg-PJ-t8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -180,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b8Q-fD-zwd">
-                                <rect key="frame" x="16" y="456" width="288" height="34"/>
+                                <rect key="frame" x="16" y="458" width="288" height="34"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -331,7 +341,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="lang" editingAccessoryType="checkmark" textLabel="hBB-Td-NGe" style="IBUITableViewCellStyleDefault" id="Rai-OD-wZk">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rai-OD-wZk" id="1Ts-CX-YA0">
                                     <rect key="frame" x="0.0" y="0.0" width="281" height="43"/>
@@ -367,7 +377,7 @@
             </objects>
             <point key="canvasLocation" x="1535" y="288"/>
         </scene>
-        <!--About-->
+        <!--About app-->
         <scene sceneID="RSk-WY-VeQ">
             <objects>
                 <viewController id="jlI-yj-mXP" customClass="AboutAppViewController" customModule="Cryptanalysis" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,28 +385,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This iOS app was made as ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UBO-sG-RBP">
-                                <rect key="frame" x="16" y="88" width="288" height="158"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UBO-sG-RBP">
+                                <rect key="frame" x="20" y="92" width="284" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <string key="text">This iOS app demonstrates how a few chosen classical ciphers works and implements cryptanalysis algorithms to crack coded messages.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It was made as bachelor thesis at Palacký University Olomouc (UPOL) by Josef Podstata at 2015." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iy4-Ib-V3j">
+                                <rect key="frame" x="20" y="188" width="284" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="byJ-yY-qhn">
-                                <rect key="frame" x="112" y="406" width="96" height="28"/>
+                                <rect key="frame" x="112" y="396" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Visit website">
+                                <state key="normal" title="Visit GitHub">
                                     <color key="titleColor" red="0.86666666670000003" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="visitWebsitePressed:" destination="jlI-yj-mXP" eventType="touchUpInside" id="Q6b-BJ-ulp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All things that this app is made of can be found at GitHub. Codes, images and bachelor thesis text included." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UcY-3f-16G">
+                                <rect key="frame" x="20" y="284" width="284" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="kzQ-Ub-i0h">
+                    <navigationItem key="navigationItem" title="About app" id="kzQ-Ub-i0h">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="pkI-xT-JqS">
                             <color key="tintColor" red="0.86666666670000003" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -428,10 +453,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" id="PdF-hx-HdC">
-                                <rect key="frame" x="16" y="42.000002950472748" width="288" height="462"/>
+                                <rect key="frame" x="16" y="42" width="288" height="462"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="Dxv-Zl-IQg">
+                                <rect key="frame" x="150" y="262" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -440,6 +469,7 @@
                     <connections>
                         <outlet property="bgView" destination="a3q-c2-v8o" id="pev-dF-ol3"/>
                         <outlet property="explanationWebView" destination="PdF-hx-HdC" id="8ye-vp-WJc"/>
+                        <outlet property="loader" destination="Dxv-Zl-IQg" id="27n-cD-t7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1c-ir-EF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,9 +516,11 @@
     <resources>
         <image name="arrows" width="32" height="32"/>
         <image name="book" width="32" height="32"/>
+        <image name="down" width="15" height="20"/>
         <image name="key" width="44" height="19"/>
         <image name="puzzle" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
+        <image name="up" width="15" height="20"/>
     </resources>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

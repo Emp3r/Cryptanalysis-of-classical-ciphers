@@ -6,11 +6,11 @@
 @implementation TranspositionCrack
 
 
-+ (NSString *)realWordsAnalysisKeyTip:(NSString *)text {
++ (NSString *)realWordsAnalysisKeyGuess:(NSString *)text {
 
     NSString * normalized = [Utils normalize:text];
     NSArray * possibleKeys = [TranspositionCrack getAllKeysForText:normalized];
-    NSString * bestTip = @"a";
+    NSString * bestGuess = @"a";
     int bestValue = 0;
     
     for (NSString * key in possibleKeys) {
@@ -20,10 +20,10 @@
         
         if (realWordsCount > bestValue) {
             bestValue = realWordsCount;
-            bestTip = key;
+            bestGuess = key;
         }
     }
-    return bestTip;
+    return bestGuess;
 }
 
 

@@ -10,7 +10,8 @@ class AboutAppViewController: UIViewController {
     }
     
     @IBAction func visitWebsitePressed(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://cryptanalysis.emper.cz")!)
+        let website = "https://github.com/Emp3r/Cryptanalysis-of-classical-ciphers"
+        UIApplication.sharedApplication().openURL(NSURL(string: website)!)
     }
     
     

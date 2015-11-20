@@ -19,31 +19,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "Nejjednodussi je vytvorit si online profesni profil na Jobs.cz. System vas provede vsemi dulezitymi kroky, takze na nic podstatneho nezapomenete. CV si pote muzete ulozit, vytisknout nebo prilozit k odpovedi na pozici. Pokud profil zpristupnite 23 tisicum zamestnavatelu z nasi databaze (staci na to jeden klik), umoznite jim oslovit vas s nabidkou naprimo. Pruvodnim dopisem sdelujete, proc jste prave vy tim vhodnym clovekem, ktereho by firma mela prijmout. Na pohovoru ale nesmeji padnout diskriminacni otazky. Zivotopisem, motivacnim dopisem a pohovorem prijimaci rizeni do firmy nekonci. V posledni dobe se prosazuji dalsi metody naboru, napriklad psychometricke testy nebo videodotazniky.",
             "Tehdejsi cisar Rudolf II. roku 1575 cele panstvi daroval Adamovi z Ditrichstejna v majetku jeho rodu zamek zustal az do roku 1945. Ditrichstejnove pokracovali v zapocate prestavbe, ktera vyvrcholila za kardinala Frantiska z Ditrichstejna. Ten na zamek premistil svou kancelar i cely svuj dvur z Olomouce a jeho prestavby vtiskly stavbe pozdne renesancni charakter. Velke prestavby se dockal severni bastion, na nemz byl vybudovan sal predku, ktery slouzil zaroven jako reprezentativni mistnost. Na stenach salu byli vyobrazeni zejmena zemreli clenove rodu Ditrichstejnu; na vyzdobe salu se podileli mnozi znami umelci, jako byl Jiri Gialdi, do soucasne doby se vsak z jednotlivych portretu dochovala jen torza. Rozsirena byla severni a jizni kridla obytnych budov, mezi zapadnim a vychodnim kridlem byla postavena visuta spojovaci chodba, ktera dnes de facto rozdeluje hlavni nadvori na dve casti. V tesne blizkosti hradu nechal Frantisek postavit budovu divadla, vinny sklep s rozsahlymi prostory a knihovnu citajici velke mnozstvi cennych svazku. Architektem techto prestaveb byl pravdepodobne italsky stavitel Giovanni Giacomo Tencalla. Planek hradu z pocatku 18. stoleti (ze sbirky F. F. von Nicolai) Nastupce Frantiska z Ditrichstejna Maxmilian nechal do sklepnich prostor umistit sud na vino, ktery pojal zhruba 1014 hektolitru vina, coz z nej cinilo nejobjemnejsi vinny sud stredni Evropy. Sud se dochoval dodnes a slouzi jako ukazka zrucnosti tehdejsich tesaru. V roce 1645 dobyla mikulovsky zamek svedska armada, ktera vyplenila zamek i mesto. Svedove vyloupili i zameckou knihovnu a vyznamnou cast jejich knih si odvezli s sebou do Svedska. Dalsi vyznamna rekonstrukce zamku probehla v druhe polovine 17. stoleti, kdy byla zamku na popud knizete Ferdinanda z Ditrichstejna vtisknuta barokni podoba. Knize Ferdinand nejdrive opravil zamek po svedskem rabovani a pote nechal na vychodni strane zamku postavit terasu s altanem. Na samem konci 17. stoleti jeste nechal vybudovat konirny. Obe stavby vsak byly v 19. stoleti zboreny. Dulezity okamzik pro historii zamku i Mikulova nastal v roce 1719. Mikulov tehdy zachvatil pozar, ktery sezehl mesto a do zakladu vyhorel i zamek. Ditrichstejnove se vsak rozhodli zamek znovu vystavet. Valcova vez s polygonni kapli a cibulovitou strechou, ktera se nachazi nad skalnim pruchodem k cestnemu nadvori. Pri prestavbe doslo ke sjednoceni vyskovych rozdilu jednotlivych podlazi a navic byly pristaveny budovy jizdaren a do zamku nebo jeho okoli byly umisteny umelecke predmety, jako napriklad kamenne sochy podel prijezdove cesty k zamku ci kovana brana do zamecke zahrady. Hlavnim architektem cele prestavby byl G. A. Oedtl. V roce 1805 si prostory mikulovskeho zamku vybral Napoleon Bonaparte pro vyjednani o mirovych smlouvach mezi Francouzskym a Rakouskym cisarstvim. 26. cervence 1866, po porazce rakouskych vojsk v bitve u Sadove, bylo na zamku podepsano primeri mezi Rakouskem a Pruskem, ktere je zname jako Mikulovske primeri. V 19. stoleti doslo k dalsim, avsak jen malym stavebnim upravam zamku. Povalecne obdobi a soucasnost[editovat | editovat zdroj] Stavebni a architektonicky vyvoj zamku tragicky poznamenal konec druhe svetove valky. 22. dubna roku 1945 v ramci osvobozeneckych boju zamek opet vyhorel, dosud nejsou znamy presne okolnosti vzniku pozaru. Jiz o dva roky pozdeji vsak vznikl Spolek pro obnovu mikulovskeho zamku, ktery se zasadnim zpusobem zaslouzil o nove vystaveni zameckeho komplexu. Autorem soucasne podoby zamku je brnensky architekt Otakar Oplatek. V soucasne dobe zamek spravuje Regionalni muzeum v Mikulove. V roce 2006 podala knezna Mercedes Ditrichstejnova, ktera zije v Argentine, zalobu u okresniho soudu v Breclavi, v niz pozaduje vydani zamku. V srpnu roku 2008 rozsirila svuj pozadavek i na dalsi mikulovske nemovitosti. V kvetnu 2010 breclavsky soud jeji pozadavky zamitl. V srpnu 2007 byla diky destivemu pocasi odhalena jeskyne, ktera se nachazi pod nadvorim zamku. V roce 2005 se v zameckem parku poradala inscenace obsazeni zamku Napoleonovou armadou. Zamek dnes slouzi i jako muzeum a vyjimecne take jako hotel. Porada se zde rada kulturnich akci, kazdorocne se tez stava jednim z dejist palavskeho vinobrani."]
     
-        
         /*
+        
         var caesarTests = [String]()
         var vigenereTests = [String]()
         //var monoalphabeticTests = [String]()
         var transpositionTests = [String]()
         
+        let caesarKey = Caesar.generateRandomKey()
+        let vigenereKey = Vigenere.generateRandomKey()
+        print("> Caesar: \(caesarKey),  Vigenere: \(vigenereKey)")
         
         for i in 0...texts.count-1 {
             print("  \(i):   ")
             
-            caesarTests.append(Caesar.encrypt(texts[i], with: "g"))
-            vigenereTests.append(Vigenere.encrypt(texts[i], with: "fring"))
+            caesarTests.append(Caesar.encrypt(texts[i], with: caesarKey))
+            vigenereTests.append(Vigenere.encrypt(texts[i], with:vigenereKey))
             // monoalphabeticTests.append(Monoalphabetic.encrypt(texts[i], with: "abcdefghijklmnopqrstuvwxyz"))
             transpositionTests.append(Transposition.encrypt(texts[i], with: "caebd"))
             
             
-            print("caesar \(caesarTests[i].characters.count) ... FA:\(CaesarCrack.frequencyAnalysisKeyTip(caesarTests[i])), RW:\(CaesarCrack.realWordsAnalysisKeyTip(caesarTests[i]))")
+            print("caesar \(caesarTests[i].characters.count) ... FA:\(CaesarCrack.frequencyAnalysisKeyGuess(caesarTests[i])), RW:\(CaesarCrack.realWordsAnalysisKeyGuess(caesarTests[i])), MD:\(CaesarCrack.lettersDistanceKeyGuess(caesarTests[i]))")
             
-            print("vigenere \(vigenereTests[i].characters.count) ... key length: \(VigenereCrack.guessKeyLength(vigenereTests[i])), FA:\(VigenereCrack.guessKeyLetterFrequency(vigenereTests[i]))")
+            print("vigenere \(vigenereTests[i].characters.count) ... key length: \(VigenereCrack.guessKeyLength(vigenereTests[i])), FA:\(VigenereCrack.frequencyAnalysisKeyGuess(vigenereTests[i])), MD:\(VigenereCrack.lettersDistanceKeyGuess(vigenereTests[i]))")
             
-            print("transposition \(transpositionTests[i].characters.count) ... RW:\(TranspositionCrack.realWordsAnalysisKeyTip(transpositionTests[i]))")
+            print("transposition \(transpositionTests[i].characters.count) ... RW:\(TranspositionCrack.realWordsAnalysisKeyGuess(transpositionTests[i]))")
             
         }
         */
+
+
 
 
         
@@ -54,13 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // print("most: \(CaesarCrack.mostUsedChars(Language.expectedFrequency(), size: 7))")
         // print("least \(CaesarCrack.leastUsedChars(Language.expectedFrequency(), size: 7))")
         //
-        
+        /*
         let letters:Array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         for i in letters {
-            print(CaesarCrack.lettersDistanceKeyTip(Caesar.encrypt(texts[0], with:i)))
-            print(CaesarCrack.lettersDistanceKeyTip(Caesar.encrypt(texts[3], with:i)))
-            print(CaesarCrack.lettersDistanceKeyTip(Caesar.encrypt(texts[5], with:i)))
+            print(CaesarCrack.lettersDistanceKeyGuess(Caesar.encrypt(texts[0], with:i)))
+            print(CaesarCrack.lettersDistanceKeyGuess(Caesar.encrypt(texts[3], with:i)))
+            print(CaesarCrack.lettersDistanceKeyGuess(Caesar.encrypt(texts[5], with:i)))
         }
+        */
         
         
         

@@ -3,7 +3,7 @@
 @interface TranspositionCrack : NSObject
 
 
-+ (NSString *)realWordsAnalysisKeyTip:(NSString *)text;
++ (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;
 
 
 + (NSArray *)getAllKeysForText:(NSString *)text;

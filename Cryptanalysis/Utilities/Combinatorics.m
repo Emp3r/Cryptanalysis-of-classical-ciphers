@@ -28,7 +28,7 @@
 + (NSArray *)getCombinations:(int)k fromArray:(NSArray *)chars {
     
     NSMutableArray * result = [[NSMutableArray alloc] init];
-    NSArray * orders = [Combinatorics getCombinationArrays:k from:[chars count]];
+    NSArray * orders = [Combinatorics getCombinationArrays:k from:(int)[chars count]];
     
     for (NSArray * order in orders) {
         NSMutableArray * row = [[NSMutableArray alloc] init];

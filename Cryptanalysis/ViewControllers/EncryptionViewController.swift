@@ -7,10 +7,12 @@ class EncryptionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var txtOpenText: UITextView!
     @IBOutlet var txtCodedText: UITextView!
     @IBOutlet var txtKey: UITextField!
-    @IBOutlet var keyView: UIImageView!
     @IBOutlet var randomKeyButton: UIButton!
     @IBOutlet var encryptButton: UIButton!
     @IBOutlet var decryptButton: UIButton!
+    @IBOutlet var keyView: UIImageView!
+    @IBOutlet var downArrowEncrypt: UIImageView!
+    @IBOutlet var upArrowDecrypt: UIImageView!
     
     var chosenCipher: Int = 0
     var chosenCipherClass: Cipher.Type!
@@ -62,6 +64,8 @@ class EncryptionViewController: UIViewController, UITextFieldDelegate {
         randomKeyButton.layer.borderWidth = 1
         randomKeyButton.layer.cornerRadius = 3
         randomKeyButton.alpha = 0
+        downArrowEncrypt.alpha = 0.5
+        upArrowDecrypt.alpha = 0.5
     }
     
     override func viewDidAppear(animated: Bool) {

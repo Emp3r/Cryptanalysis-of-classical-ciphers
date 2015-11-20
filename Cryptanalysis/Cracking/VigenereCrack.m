@@ -6,81 +6,9 @@
 @implementation VigenereCrack
 
 // key length
-+ (int *)findDistanceDivisor:(NSString *)text {
-    
-    text = [Utils normalize:text];
-    static int result[19];
-    
-    for (int i = 0; i < [text length] - 8; i++) {
-        NSString * actualString = [text substringFromIndex:i];
-        
-        for (char j = 7; j >= 4; j--) {
-            NSString * actualSequence = [actualString substringToIndex:j];
-            NSString * restOfText = [actualString substringFromIndex:j];
-            NSRange range = [restOfText rangeOfString:actualSequence];
-            
-            if (range.location != NSNotFound) {
-                int distance = (int)range.location + j;
-                
-                for (char k = 2; k <= 20; k++)
-                    if (distance % k == 0)
-                        result[k - 2]++;
-                
-                i = i + j;
-                break;
-            }
-        }
-    }
-    return result;
-}
-
-+ (NSArray *)findDistanceDivisors:(NSString *)text {
-    
-    text = [Utils normalize:text];
-    NSMutableArray * result = [NSMutableArray arrayWithArray:[Utils makeNumberArrayWith:19]];
-    
-    for (int i = 0; i < [text length] - 8; i++) {
-        NSString * actualString = [text substringFromIndex:i];
-        
-        for (char j = 7; j >= 4; j--) {
-            NSString * actualSequence = [actualString substringToIndex:j];
-            NSString * restOfText = [actualString substringFromIndex:j];
-            NSRange range = [restOfText rangeOfString:actualSequence];
-            
-            if (range.location != NSNotFound) {
-                int distance = (int)range.location + j;
-                
-                for (char k = 2; k <= 20; k++) {
-                    if (distance % k == 0) {
-                        NSNumber * temp = [result objectAtIndex: k - 2];
-                        int nextValue = [temp intValue] + 1;
-                        
-                        [result replaceObjectAtIndex: k - 2
-                                withObject:[NSNumber numberWithInt:nextValue]];
-                    }
-                }
-                i = i + j;
-                break;
-            }
-        }
-    }
-    return [result copy];
-}
-
 + (int)guessKeyLength:(NSString *)text {
     
     int result = 1;
-    
-    /*
-    int * divisors = [VigenereCrack findDistanceDivisor:text];
-    int bestMatch = 0;
-    
-    for (int i = 18; i >= 0; i--) {
-        if (bestMatch < divisors[i]) {
-            bestMatch = divisors[i];
-            result = i + 2;
-        }
-    } */
     
     NSArray * divisors = [VigenereCrack findDistanceDivisors:text];
     int bestMatch = 0;
@@ -97,7 +25,6 @@
     return result;
 }
 
-// frequency analysis
 + (NSArray *)codedTextSplitted:(NSString *)text {
     
     text = [Utils normalize:text];
@@ -115,7 +42,41 @@
     return result;
 }
 
-+ (NSString *)guessKeyLetterFrequency:(NSString *)text {
++ (NSArray *)findDistanceDivisors:(NSString *)text {
+    
+    text = [Utils normalize:text];
+    NSMutableArray * result = [[Utils makeNumberArrayWith:19] mutableCopy];
+    
+    for (int i = 0; i < [text length] - 8; i++) {
+        NSString * actualString = [text substringFromIndex:i];
+        
+        for (char j = 7; j >= 4; j--) {
+            NSString * restOfText = [actualString substringFromIndex:j];
+            NSRange range = [restOfText rangeOfString:[actualString substringToIndex:j]];
+            
+            if (range.location != NSNotFound) {
+                int distance = (int)range.location + j;
+                
+                for (char k = 2; k <= 20; k++) {
+                    if (distance % k == 0) {
+                        int nextValue = [[result objectAtIndex:k - 2] intValue] + 1;
+                        
+                        [result replaceObjectAtIndex:k - 2
+                                withObject:[NSNumber numberWithInt:nextValue]];
+                    }
+                }
+                i = i + j;
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+
+
+// frequency analysis
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text {
     
     NSArray * parts = [VigenereCrack codedTextSplitted:text];
     NSMutableString * result = [[NSMutableString alloc] init];
@@ -130,10 +91,27 @@
 
 + (NSString *)breakWithLetterFrequency:(NSString *)text {
     
-    NSString * keyTip = [VigenereCrack guessKeyLetterFrequency:text];
+    NSString * keyGuess = [VigenereCrack frequencyAnalysisKeyGuess:text];
     
-    return [Vigenere decrypt:text with:keyTip];
+    return [Vigenere decrypt:text with:keyGuess];
 }
+
+
+
+// frequent letters minimal distance attack
++ (NSString *)lettersDistanceKeyGuess:(NSString *)text {
+    
+    NSArray * parts = [VigenereCrack codedTextSplitted:text];
+    NSMutableString * result = [[NSMutableString alloc] init];
+    
+    for (NSString * part in parts) {
+        NSString * actualKey = [CaesarCrack lettersDistanceKeyGuess:part];
+        
+        [result appendString:actualKey];
+    }
+    return result;
+}
+
 
 
 @end

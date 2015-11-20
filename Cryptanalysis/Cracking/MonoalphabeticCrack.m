@@ -7,7 +7,7 @@
 
 
 
-+ (NSString *)frequencyAnalysisKeyTip:(NSString *)text {
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text {
     
     NSMutableArray * result = [[NSMutableArray alloc] init];
     NSArray * frequency = [Utils lettersFrequency:text];
@@ -22,20 +22,20 @@
         
         float actualLetterFrequency = [frequency[i] floatValue];
         float smallestDifference = FLT_MAX;
-        char bestLetterTip = 0;
+        char bestLetterGuess = 0;
         
         for (char j = 0; j < LETTER_COUNT; j++) {
             float difference = fabsf(actualLetterFrequency - [expected[j] floatValue]);
             
             if (difference < smallestDifference && freeLetters[j]) {
                 smallestDifference = difference;
-                bestLetterTip = j;
+                bestLetterGuess = j;
             }
             
         }
         
-        freeLetters[bestLetterTip] = false;
-        [result addObject:[NSString stringWithFormat:@"%c", ('a' + bestLetterTip)]];
+        freeLetters[bestLetterGuess] = false;
+        [result addObject:[NSString stringWithFormat:@"%c", ('a' + bestLetterGuess)]];
     }
     
     return [result componentsJoinedByString:@""];

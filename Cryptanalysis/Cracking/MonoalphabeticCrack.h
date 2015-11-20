@@ -3,7 +3,7 @@
 @interface MonoalphabeticCrack : NSObject
 
 
-+ (NSString *)frequencyAnalysisKeyTip:(NSString *)text;
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text;
 
 
 

@@ -3,18 +3,22 @@
 @interface VigenereCrack : NSObject
 
 // key length
-+ (int *)findDistanceDivisor:(NSString *)text;
++ (int)guessKeyLength:(NSString *)text;
+
++ (NSArray *)codedTextSplitted:(NSString *)text;
 
 + (NSArray *)findDistanceDivisors:(NSString *)text;
 
-+ (int)guessKeyLength:(NSString *)text;
 
 // frequency analysis
-+ (NSArray *)codedTextSplitted:(NSString *)text;
-
-+ (NSString *)guessKeyLetterFrequency:(NSString *)text;
++ (NSString *)frequencyAnalysisKeyGuess:(NSString *)text;
 
 + (NSString *)breakWithLetterFrequency:(NSString *)text;
+
+
+// frequent letters minimal distance attack
++ (NSString *)lettersDistanceKeyGuess:(NSString *)text;
+
 
 
 @end
