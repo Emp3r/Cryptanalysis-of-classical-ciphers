@@ -36,7 +36,7 @@ class ExplanationViewController: UIViewController, UIWebViewDelegate {
     }
     
     override func viewDidLoad() {
-        cipherData = Utils.availableCiphersNormalized()
+        cipherData = Storage.availableCiphersNormalized()
         super.viewDidLoad()
         
         explanationWebView.delegate = self

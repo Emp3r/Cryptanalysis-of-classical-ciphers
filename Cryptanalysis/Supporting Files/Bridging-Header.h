@@ -16,8 +16,10 @@
 
 #import "Utils.h"
 #import "Combinatorics.h"
+#import "Storage.h"
 #import "Language.h"
 #import "LanguageParser.h"
+#import "FileReader.h"
 
 
 #endif

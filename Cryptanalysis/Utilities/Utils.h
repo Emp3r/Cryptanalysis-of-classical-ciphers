@@ -2,16 +2,10 @@
 
 @interface Utils : NSObject
 
-
-// array of available ciphers and attacks
-+ (NSArray *)availableCiphers;
-+ (NSArray *)availableCiphersNormalized;
-+ (NSArray *)availableAttacks;
-+ (NSArray *)availableAttacksFor:(int)cipher;
-
-// returns lowercased parameter string
-// with letters only ('a' - 'z')
+// returns lowercased parameter string with letters only ('a' - 'z')
 + (NSString *)normalize:(NSString *)string;
++ (NSString *)removeWhiteEnd:(NSString *)string;
++ (NSString *)rewriteTextToASCIIChars:(NSString *)text;
 
 // allowed: numbers, space, dot, coma
 + (bool)isAllowedSymbol:(char)symbol;
@@ -33,9 +27,6 @@
 // returns random letter from 'a' to 'z'
 + (char)getRandomLetter;
 
-////returns random key with no letters repeating
-//+ (NSString *)randomKey:(int)length;
-
 // remove letter duplicates
 + (NSString *)removeDuplicates:(NSString *)text;
 
@@ -45,6 +36,7 @@
 
 // array full of zeros (NSNumber with 0)
 + (NSArray *)makeNumberArrayWith:(int)elements;
++ (NSArray *)makeArraysArrayWith:(int)elements;
 
 + (NSArray *)makeCharArrayFrom:(NSString *)string;
 
@@ -52,7 +44,9 @@
 
 
 + (NSArray *)getAllDivisors:(int)number;
-+ (NSArray *)getAllDivisors:(int)number max:(int)maxNumber;
++ (NSArray *)getDivisors:(int)number min:(int)min;
++ (NSArray *)getDivisors:(int)number max:(int)max;
++ (NSArray *)getDivisors:(int)number min:(int)min max:(int)max;
 
 
 @end

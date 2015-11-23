@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language lang="Czech">
+  <letterFrequency>
+    <letter char="a">9.288</letter>
+    <letter char="b">0.822</letter>
+    <letter char="c">1.202</letter>
+    <letter char="d">3.491</letter>
+    <letter char="e">9.417</letter>
+    <letter char="f">0.084</letter>
+    <letter char="g">0.092</letter>
+    <letter char="h">1.356</letter>
+    <letter char="i">7.716</letter>
+    <letter char="j">1.433</letter>
+    <letter char="k">2.894</letter>
+    <letter char="l">3.802</letter>
+    <letter char="m">2.446</letter>
+    <letter char="n">6.475</letter>
+    <letter char="o">6.719</letter>
+    <letter char="p">1.906</letter>
+    <letter char="q">0.001</letter>
+    <letter char="r">5.179</letter>
+    <letter char="s">5.901</letter>
+    <letter char="t">5.733</letter>
+    <letter char="u">2.409</letter>
+    <letter char="v">5.344</letter>
+    <letter char="w">0.014</letter>
+    <letter char="x">0.027</letter>
+    <letter char="y">2.038</letter>
+    <letter char="z">2.224</letter>
+  </letterFrequency>
+  <mostUsedWords>
+    <word>byt</word>
+    <word>se</word>
+    <word>na</word>
+    <word>ten</word>
+    <word>on</word>
+    <word>ze</word>
+    <word>ktery</word>
+    <word>mit</word>
+    <word>do</word>
+    <word>ja</word>
+    <word>jeho</word>
+    <word>ale</word>
+    <word>svuj</word>
+    <word>jako</word>
+    <word>za</word>
+    <word>moci</word>
+    <word>rok</word>
+    <word>pro</word>
+    <word>tak</word>
+    <word>po</word>
+    <word>tento</word>
+    <word>co</word>
+    <word>kdyz</word>
+    <word>vsechen</word>
+    <word>uz</word>
+    <word>jak</word>
+    <word>aby</word>
+    <word>od</word>
+    <word>nebo</word>
+    <word>rici</word>
+    <word>jeden</word>
+    <word>jen</word>
+    <word>muj</word>
+    <word>jenz</word>
+    <word>clovek</word>
+    <word>ty</word>
+    <word>stat</word>
+    <word>muset</word>
+    <word>velky</word>
+    <word>chtit</word>
+    <word>take</word>
+    <word>az</word>
+    <word>nez</word>
+    <word>jeste</word>
+    <word>pri</word>
+    <word>jit</word>
+    <word>pak</word>
+    <word>pred</word>
+    <word>dva</word>
+    <word>vsak</word>
+    <word>ani</word>
+    <word>vedet</word>
+    <word>novy</word>
+    <word>hodne</word>
+    <word>podle</word>
+    <word>dalsi</word>
+    <word>cely</word>
+    <word>jiny</word>
+    <word>prvni</word>
+    <word>mezi</word>
+    <word>tady</word>
+    <word>dat</word>
+    <word>den</word>
+    <word>tam</word>
+    <word>kde</word>
+    <word>doba</word>
+    <word>kazdy</word>
+    <word>druhy</word>
+    <word>misto</word>
+    <word>dobry</word>
+    <word>takový</word>
+    <word>strana</word>
+    <word>protoze</word>
+    <word>nic</word>
+    <word>zacit</word>
+    <word>neco</word>
+    <word>zivot</word>
+    <word>videt</word>
+    <word>rikat</word>
+    <word>zeme</word>
+    <word>dite</word>
+    <word>maly</word>
+    <word>ne</word>
+    <word>sám</word>
+    <word>bez</word>
+    <word>ruka</word>
+    <word>ci</word>
+    <word>svet</word>
+    <word>dostat</word>
+    <word>prace</word>
+    <word>nejaky</word>
+    <word>proto</word>
+    <word>noc</word>
+    <word>noha</word>
+    <word>hlava</word>
+    <word>delat</word>
+    <word>spatny</word>
+    <word>stary</word>
+    <word>slyset</word>
+    <word>priklad</word>
+  </mostUsedWords>
+  <bigrams>
+    <bi>st</bi>
+    <bi>ni</bi>
+    <bi>po</bi>
+    <bi>ov</bi>
+    <bi>ro</bi>
+    <bi>en</bi>
+    <bi>na</bi>
+    <bi>je</bi>
+    <bi>pr</bi>
+    <bi>te</bi>
+    <bi>le</bi>
+    <bi>ko</bi>
+    <bi>ne</bi>
+    <bi>od</bi>
+    <bi>ra</bi>
+    <bi>to</bi>
+    <bi>ou</bi>
+    <bi>no</bi>
+    <bi>la</bi>
+    <bi>li</bi>
+    <bi>ho</bi>
+    <bi>do</bi>
+    <bi>os</bi>
+    <bi>se</bi>
+    <bi>ta</bi>
+    <bi>al</bi>
+    <bi>ed</bi>
+    <bi>an</bi>
+    <bi>ce</bi>
+    <bi>va</bi>
+    <bi>pr</bi>
+    <bi>at</bi>
+    <bi>re</bi>
+    <bi>er</bi>
+    <bi>ti</bi>
+    <bi>em</bi>
+    <bi>in</bi>
+    <bi>sk</bi>
+    <bi>lo</bi>
+    <bi>ne</bi>
+  </bigrams>
+  <trigrams>
+    <tri>pro</tri>
+    <tri>ost</tri>
+    <tri>sta</tri>
+    <tri>pre</tri>
+    <tri>ter</tri>
+    <tri>eni</tri>
+    <tri>ova</tri>
+    <tri>pod</tri>
+    <tri>kte</tri>
+    <tri>pra</tri>
+    <tri>eho</tri>
+    <tri>sti</tri>
+    <tri>red</tri>
+    <tri>kon</tri>
+    <tri>nos</tri>
+    <tri>ick</tri>
+    <tri>ova</tri>
+    <tri>pri</tri>
+    <tri>sou</tri>
+    <tri>ist</tri>
+    <tri>edn</tri>
+    <tri>ske</tri>
+    <tri>pri</tri>
+    <tri>odn</tri>
+    <tri>tel</tri>
+    <tri>ani</tri>
+    <tri>ent</tri>
+    <tri>str</tri>
+    <tri>ove</tri>
+    <tri>nov</tri>
+    <tri>pol</tri>
+    <tri>spo</tri>
+    <tri>vat</tri>
+    <tri>nim</tri>
+    <tri>jak</tri>
+    <tri>val</tri>
+    <tri>dni</tri>
+    <tri>sto</tri>
+    <tri>tak</tri>
+    <tri>lov</tri>
+  </trigrams>
+</language>

@@ -20,6 +20,7 @@ class EncryptionViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnEncrypt() {
         if !txtOpenText.text.isEmpty {
+            txtOpenText.text = Utils.rewriteTextToASCIIChars(txtOpenText.text)
             if isKeyValid() {
                 txtCodedText.text = chosenCipherClass.encrypt(txtOpenText.text, with: txtKey.text)
             }

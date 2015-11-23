@@ -5,27 +5,6 @@
 @implementation Utils
 
 
-+ (NSArray *)availableCiphers {
-    return @[@"Caesar", @"Vigenère", @"Monoalphabetic", @"Transposition"];
-}
-
-+ (NSArray *)availableCiphersNormalized {
-    // for file names etc.
-    return @[@"Caesar", @"Vigenere", @"Monoalphabetic", @"Transposition"];
-}
-
-+ (NSArray *)availableAttacks {
-    return @[@[@"Brute force - frequency", @"Brute force - real words", @"Triangle attack"],
-             @[@"Guessed key length attack", @"Modified triangle attack"],
-             @[@"Unique words attack"],
-             @[@"Finding word attack", @"Brute force - real words"]];
-}
-
-+ (NSArray *)availableAttacksFor:(int)cipherIndex {
-    return [Utils availableAttacks][cipherIndex];
-}
-
-
 + (NSString *)normalize:(NSString *)string; {
     
     string = [string lowercaseString];
@@ -40,9 +19,26 @@
     return result;
 }
 
-+ (bool)isAllowedSymbol:(char)symbol {
++ (NSString *)removeWhiteEnd:(NSString *)string {
     
+    char lastChar = [string characterAtIndex:[string length] - 1];
+    
+    if (lastChar == ' ' || lastChar == '\n')
+        return [Utils removeWhiteEnd:[string substringToIndex:[string length] - 1]];
+    else
+        return string;
+}
+
++ (bool)isAllowedSymbol:(char)symbol {
     return ((symbol >= '0' && symbol <= '9') || symbol == ' ' || symbol == '.' || symbol == ',');
+}
+
++ (NSString *)rewriteTextToASCIIChars:(NSString *)text {
+    // á, ä -> a   etc..
+    return [[NSString alloc] initWithData:[text dataUsingEncoding:NSASCIIStringEncoding
+                                             allowLossyConversion:YES]
+                                 encoding:NSASCIIStringEncoding];
+    
 }
 
 
@@ -166,6 +162,16 @@
     return result;
 }
 
++ (NSArray *)makeArraysArrayWith:(int)elements {
+    
+    NSMutableArray * result = [NSMutableArray array];
+    
+    for (int i = 0; i < elements; i++)
+        [result addObject:[[NSMutableArray alloc] init]];
+    
+    return result;
+}
+
 
 + (NSArray *)makeCharArrayFrom:(NSString *)string {
     
@@ -209,15 +215,27 @@
     return results;
 }
 
-+ (NSArray *)getAllDivisors:(int)number max:(int)maxNumber {
++ (NSArray *)getDivisors:(int)number min:(int)min {
     
-    NSArray * allDivisors = [Utils getAllDivisors:number];
-    NSPredicate * predicate = [NSPredicate predicateWithFormat: @"SELF <= %d", maxNumber];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF >= %d", min];
     
-    return [allDivisors filteredArrayUsingPredicate: predicate];
+    return [[Utils getAllDivisors:number] filteredArrayUsingPredicate:predicate];
+}
+
++ (NSArray *)getDivisors:(int)number max:(int)max {
+   
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF <= %d", max];
+    
+    return [[Utils getAllDivisors:number] filteredArrayUsingPredicate:predicate];
 }
 
 
++ (NSArray *)getDivisors:(int)number min:(int)min max:(int)max {
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF <= %d", max];
+    
+    return [[Utils getDivisors:number min:min] filteredArrayUsingPredicate:predicate];
+}
 
 
 @end

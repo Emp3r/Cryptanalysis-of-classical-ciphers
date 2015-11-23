@@ -1,5 +1,6 @@
 import UIKit
 import XCTest
+import Cryptanalysis
 
 class CryptanalysisTests: XCTestCase {
     
@@ -13,11 +14,11 @@ class CryptanalysisTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-        
-        
+    
+    func testUtf8ToASCII() {
+        let utf_8 = "ěščřžýáíéúů ťďľó äëïöü ß żź ôòø ñŝçş ĵĥğĝę"
+        let ascii = "escrzyaieuu tdlo aeiou s zz ooo nscs jhgge"
+        XCTAssertEqual(ascii, Utils.rewriteTextToASCIIChars(utf_8))
     }
     
     

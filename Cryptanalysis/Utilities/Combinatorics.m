@@ -24,7 +24,6 @@
     return result;
 }
 
-
 + (NSArray *)getCombinations:(int)k fromArray:(NSArray *)chars {
     
     NSMutableArray * result = [[NSMutableArray alloc] init];
@@ -60,6 +59,7 @@
     [Combinatorics combinations:pool need:(need - 1) chosen:(chosen | (*marker << at)) at:(at + 1) marker:marker result:result];
     [Combinatorics combinations:pool need:need chosen:chosen at:(at + 1) marker:marker result:result];
 }
+
 
 // permutations
 + (NSArray *)getPermutationStrings:(NSArray *)chars {

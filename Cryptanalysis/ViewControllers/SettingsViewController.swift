@@ -15,8 +15,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate {
 
     
     override func viewDidLoad() {
-        cipherData = Utils.availableCiphers()
-        attackData = Utils.availableAttacks()
+        cipherData = Storage.availableCiphers()
+        attackData = Storage.availableAttacks()
         super.viewDidLoad()
         
         bgView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
