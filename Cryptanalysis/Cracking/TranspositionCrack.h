@@ -6,7 +6,7 @@
 // brute force - real words count
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;
 
-+ (NSArray *)getAllKeysForText:(NSString *)text;
++ (NSArray *)getAllKeysForText:(NSString *)text maxLength:(int)maxLength;
 
 + (NSArray *)getAllKeysWithLengths:(NSArray *)lengths;
 
@@ -18,12 +18,17 @@
 // finding word attack
 + (NSString *)findingWordKeyGuess:(NSString *)text;
 
-+ (NSArray *)getAllWordsOfLengths:(NSArray *)lengths;
++ (NSArray *)makeKeysFromPairs:(NSDictionary *)pairs;
+
++ (NSArray *)makeLetterOrdersFromPairs:(NSDictionary *)pairs;
+
++ (void)getPermutations:(NSString *)word current:(int)current positions:(NSDictionary *)positions visited:(NSArray *)visited result:(NSMutableArray **)result;
+
 + (NSArray *)getAllWordsOfLength:(int)lengths;
+
 + (FileReader *)getDictionaryFileReader;
 
 + (bool)hasSameChars:(NSString *)string1 and:(NSString *)string2;
-
 
 
 @end

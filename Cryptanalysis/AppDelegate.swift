@@ -52,8 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         */
-        print("chars: \(texts[6].characters.count)")
-        //TranspositionCrack.findingWordKeyGuess(Transposition.encrypt(texts[6], with: "caebd"));
+        let example = Transposition.encrypt(texts[6], with: "caebd")
+        //let example2 = Transposition.encrypt(texts[6], with: "abdc")
+            
+        //print("chars: \(TranspositionCrack.getKeyLengths(example))")
+        
+        TranspositionCrack.findingWordKeyGuess(example);
+        //TranspositionCrack.findingWordKeyGuess(example2);
 
         
         //if TranspositionCrack.hasSameChars("abcdef", and: "ebcdaf") {

@@ -7,29 +7,27 @@
 
 + (NSString *)encrypt:(NSString *)text with:(NSString *)key {
     
-    text = [Utils normalize:text];
-    key = [Utils normalize:key];
+    text = [Utils normalize:text], key = [Utils normalize:key];
     short keyLength = [key length];
     
     NSArray * keyOrder = [Transposition makeKeyOrder:key];
-    NSArray * parts = [Transposition getTextParts:text with:keyLength];
-    NSArray * partsScrambled = [Transposition getScrambledParts:parts with:keyOrder];
-    NSArray * columns = [Transposition readColumnsFrom:partsScrambled with:keyLength];
+    NSArray * parts = [Transposition getTextParts:text length:keyLength];
+    NSArray * partsScrambled = [Transposition getScrambledParts:parts order:keyOrder];
+    NSArray * columns = [Transposition readColumnsFrom:partsScrambled length:keyLength];
     
     return [[columns componentsJoinedByString:@" "] uppercaseString];
 }
 
 + (NSString *)decrypt:(NSString *)text with:(NSString *)key {
     
-    text = [Utils normalize:text];
-    key = [Utils normalize:key];
+    text = [Utils normalize:text], key = [Utils normalize:key];
     short keyLength = [key length];
     int columns = ceil((float)[text length] / keyLength);
     
-    NSArray * reverseKeyOrder = [Transposition makeReverseKeyOrder:key];
-    NSArray * parts = [Transposition getTextParts:text with:columns];
-    NSArray * preparedParts = [Transposition readColumnsFrom:parts with:columns];
-    NSArray * decryptedParts = [Transposition getScrambledParts:preparedParts with:reverseKeyOrder];
+    NSArray * keyOrder = [Transposition makeReverseKeyOrder:key];
+    NSArray * parts = [Transposition getTextParts:text length:columns];
+    NSArray * preparedParts = [Transposition readColumnsFrom:parts length:columns];
+    NSArray * decryptedParts = [Transposition getScrambledParts:preparedParts order:keyOrder];
     
     return [decryptedParts componentsJoinedByString:@""];
 }
@@ -64,7 +62,7 @@
 }
 
 
-+ (NSArray *)getTextParts:(NSString *)text with:(short)partLength {
++ (NSArray *)getTextParts:(NSString *)text length:(int)partLength {
     
     NSMutableString * workText = [NSMutableString stringWithString:text];
     NSMutableArray * partsUnchanged = [[NSMutableArray alloc] init];
@@ -82,7 +80,7 @@
     return partsUnchanged;
 }
 
-+ (NSArray *)getScrambledParts:(NSArray *)parts with:(NSArray *)keyOrder {
++ (NSArray *)getScrambledParts:(NSArray *)parts order:(NSArray *)keyOrder {
     
     NSMutableArray * partsChanged = [NSMutableArray array];
     
@@ -98,7 +96,7 @@
 }
 
 
-+ (NSArray *)readColumnsFrom:(NSArray *)parts with:(short)keyLength {
++ (NSArray *)readColumnsFrom:(NSArray *)parts length:(int)keyLength {
     
     NSMutableArray * result = [NSMutableArray array];
     

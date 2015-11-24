@@ -15,13 +15,13 @@
 + (NSArray *)makeReverseKeyOrder:(NSString *)key;
 
 // explodes text to array with strings of length partLength
-+ (NSArray *)getTextParts:(NSString *)text with:(short)partLength;
++ (NSArray *)getTextParts:(NSString *)text length:(int)partLength;
 
 // scrambles each text part by keyOrder
-+ (NSArray *)getScrambledParts:(NSArray *)parts with:(NSArray *)keyOrder;
++ (NSArray *)getScrambledParts:(NSArray *)parts order:(NSArray *)keyOrder;
 
 
-+ (NSArray *)readColumnsFrom:(NSArray *)parts with:(short)keyLength;
++ (NSArray *)readColumnsFrom:(NSArray *)parts length:(int)keyLength;
 
 
 + (bool)isAllowedKey:(NSString *)key;

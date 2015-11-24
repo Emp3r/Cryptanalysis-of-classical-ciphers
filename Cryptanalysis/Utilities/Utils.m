@@ -34,11 +34,9 @@
 }
 
 + (NSString *)rewriteTextToASCIIChars:(NSString *)text {
-    // á, ä -> a   etc..
     return [[NSString alloc] initWithData:[text dataUsingEncoding:NSASCIIStringEncoding
                                              allowLossyConversion:YES]
                                  encoding:NSASCIIStringEncoding];
-    
 }
 
 

@@ -10,13 +10,13 @@
 // brute force - real words count
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text {
 
-    NSString * normalized = [Utils normalize:text];
-    NSArray * possibleKeys = [TranspositionCrack getAllKeysForText:normalized];
+    text = [Utils normalize:text];
+    NSArray * possibleKeys = [TranspositionCrack getAllKeysForText:text maxLength:8];
     NSString * bestGuess = @"a";
     int bestValue = 0;
     
     for (NSString * key in possibleKeys) {
-        NSString * decrypted = [Transposition decrypt:normalized with:key];
+        NSString * decrypted = [Transposition decrypt:text with:key];
         int realWordsCount = [Utils realWordsCount:decrypted];
         
         if (realWordsCount > bestValue) {
@@ -28,10 +28,10 @@
 }
 
 
-+ (NSArray *)getAllKeysForText:(NSString *)text {
++ (NSArray *)getAllKeysForText:(NSString *)text maxLength:(int)maxLength {
     
     int length = (int)[text length];
-    NSArray * divisors = [Utils getDivisors:length max:8];
+    NSArray * divisors = [Utils getDivisors:length max:maxLength];
     
     return [TranspositionCrack getAllKeysWithLengths:divisors];
 }
@@ -47,7 +47,6 @@
     
     return result;
 }
-
 
 + (NSArray *)getAllPossibleKeysWithLength:(int)length {
     
@@ -80,73 +79,114 @@
 + (NSString *)findingWordKeyGuess:(NSString *)text {
     
     text = [Utils normalize:text];
-    NSString * bestGuess = @"a";
-    //NSMutableArray * keys = [[NSMutableArray alloc] init];
-    
-    NSArray * keyLengths = [Utils getDivisors:[text length] min:4 max:15];
+    NSArray * keyLengths = [Utils getDivisors:[text length] min:4 max:12];
     NSMutableDictionary * pairs = [[NSMutableDictionary alloc] init];
     
-    
     int i = 0;
-    int r = 0;
     for (NSNumber * keyLength in keyLengths) {
         @autoreleasepool {
-            NSArray * textRows = [Transposition getTextParts:text with:[keyLength intValue]];
-            // OMG
-            // change textRows to columns!
-            //
-            //
-            // NSArray * words = [TranspositionCrack getAllWordsOfLength:[keyLength intValue]];
-            NSArray * words = [[Language mostUsedWords] filteredArrayUsingPredicate:
-                               [NSPredicate predicateWithFormat:@"length == %@", keyLength]];
+            int columns = ceil((float)[text length] / [keyLength intValue]);
+            NSArray * textColumns = [Transposition getTextParts:text length:columns];
+            NSArray * textRows = [Transposition readColumnsFrom:textColumns length:columns];
+            NSArray * words = [TranspositionCrack getAllWordsOfLength:[keyLength intValue]];
             
-            
-            if (i == 0) {
-                for (NSString * row in textRows) {
-                    r++;
-                    [pairs addEntriesFromDictionary:[TranspositionCrack getPairsOfWordsWithSameChars:words inText:row]];
+            if (i == 1) {
+            for (NSString * row in textRows) {
+                @autoreleasepool {
+                    for (NSString * word in words)
+                        if ([TranspositionCrack hasSameChars:row and:word])
+                            [pairs setObject:row forKey:word];
                 }
             }
-            
-            // NSLog(@": %@, %d", pairs, r);
-            // [words[i] removeAllObjects];
+            }
         }
         i++;
     }
-    NSLog(@": %@", pairs);
     
-    return bestGuess;
-}
-
-+ (NSDictionary *)getPairsOfWordsWithSameChars:(NSArray *)words inText:(NSString *)text {
+    NSArray * keys = [TranspositionCrack makeKeysFromPairs:pairs];
     
-    NSMutableDictionary * pairs = [[NSMutableDictionary alloc] init];
-    NSString * word;
+    // order by probability
+    //
     
-    @autoreleasepool {
-        for (word in words)
-            if ([TranspositionCrack hasSameChars:text and:word])
-                [pairs setObject:[text copy] forKey:[word copy]];
-    }
-    return pairs;
+    
+    return nil;
 }
 
 
-+ (NSArray *)getAllWordsOfLengths:(NSArray *)lengths {
+
++ (NSArray *)makeKeysFromPairs:(NSDictionary *)pairs {
     
-    NSArray * words = [Utils makeArraysArrayWith:[lengths count]];
-    FileReader * reader = [TranspositionCrack getDictionaryFileReader];
+    NSMutableArray * keys = [[NSMutableArray alloc] init];
+    NSArray * letterOrders = [TranspositionCrack makeLetterOrdersFromPairs:pairs];
+    letterOrders = [[NSOrderedSet orderedSetWithArray:letterOrders] array];
     
-    NSString * line = nil;
-    while ((line = [reader readLine])) {
-        line = [Utils removeWhiteEnd:line];
+    for (NSArray * o in letterOrders) {
+        NSMutableArray * key = [[NSMutableArray alloc] init];
         
-        for (int i = 0; i < [lengths count]; i++)
-            if ([line length] == [lengths[i] intValue])
-                [words[i] addObject:line];
+        for (NSNumber * n in o)
+            [key addObject:[NSString stringWithFormat:@"%c", ('a' + [n intValue])]];
+    
+        [keys addObject:[key componentsJoinedByString:@""]];
     }
-    return words;
+    return keys;
 }
+
++ (NSArray *)makeLetterOrdersFromPairs:(NSDictionary *)pairs {
+    
+    NSMutableArray * letterOrders = [[NSMutableArray alloc] init];
+    
+    for (NSString * key in [pairs allKeys]) {
+        NSDictionary * positions = [TranspositionCrack getLettersPositions:key];
+        NSMutableArray * perms = [[NSMutableArray alloc] init];
+        
+        [TranspositionCrack getPermutations:key current:0 positions:positions
+                                    visited:[NSArray array] result:&perms];
+        
+        [letterOrders addObjectsFromArray:perms];
+    }
+    return letterOrders;
+}
+
++ (NSDictionary *)getLettersPositions:(NSString *)string {
+    
+    NSMutableDictionary * result = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < [string length]; i++) {
+        NSString * letter = [NSString stringWithFormat:@"%c", [string characterAtIndex:i]];
+        
+        if ([result objectForKey:letter]) {
+            [result[letter] addObject:[NSNumber numberWithInt:i]];
+        } else {
+            result[letter] = [NSMutableArray arrayWithObject:[NSNumber numberWithInt:i]];
+        }
+    }
+    return result;
+}
+
++ (void)getPermutations:(NSString *)word current:(int)current positions:(NSDictionary *)positions visited:(NSArray *)visited result:(NSMutableArray **)result {
+
+    if (current == [word length]) {
+        [*result addObject:visited];
+    }
+    else {
+        NSString * key = [NSString stringWithFormat:@"%c", [word characterAtIndex:current]];
+        
+        if ([positions objectForKey:key]) {
+            for (NSNumber * i in positions[key]) {
+                if (![visited containsObject:i]) {
+                    NSMutableArray * next = [NSMutableArray arrayWithArray:visited];
+                    [next addObject:i];
+                    [TranspositionCrack getPermutations:word current:(current + 1)
+                                              positions:positions visited:next result:result];
+                }
+            }
+        }
+        else {
+            [*result removeAllObjects];
+        }
+    }
+}
+
 
 + (NSArray *)getAllWordsOfLength:(int)length {
     
@@ -163,6 +203,11 @@
         if ([line length] == length)
             [words addObject:line];
     }
+    
+    if ([words count] == 0)
+        words = [[[Language mostUsedWords] filteredArrayUsingPredicate:
+                  [NSPredicate predicateWithFormat:@"length == %@", length]] mutableCopy];
+    
     return words;
 }
 
@@ -184,7 +229,6 @@
             isEqualToArray:
             [[Utils makeCharArrayFrom:string2] sortedArrayUsingSelector:@selector(compare:)]];
 }
-
 
 
 @end

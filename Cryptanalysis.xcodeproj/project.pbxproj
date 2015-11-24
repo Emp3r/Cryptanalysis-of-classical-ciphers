@@ -22,6 +22,14 @@
 		BB14B56E1AAB868900DBA610 /* CryptanalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56B1AAB868900DBA610 /* CryptanalysisViewController.swift */; };
 		BB14B56F1AAB868900DBA610 /* EncryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56C1AAB868900DBA610 /* EncryptionViewController.swift */; };
 		BB14B5701AAB868900DBA610 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B56D1AAB868900DBA610 /* SettingsViewController.swift */; };
+		BB3FAAF71C04E0720055644A /* Czech_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAEF1C04E0720055644A /* Czech_dictionary.txt */; };
+		BB3FAAF81C04E0720055644A /* English_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF01C04E0720055644A /* English_dictionary.txt */; };
+		BB3FAAF91C04E0720055644A /* French_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF11C04E0720055644A /* French_dictionary.txt */; };
+		BB3FAAFA1C04E0720055644A /* German_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF21C04E0720055644A /* German_dictionary.txt */; };
+		BB3FAAFB1C04E0720055644A /* Italian_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF31C04E0720055644A /* Italian_dictionary.txt */; };
+		BB3FAAFC1C04E0720055644A /* Polish_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF41C04E0720055644A /* Polish_dictionary.txt */; };
+		BB3FAAFD1C04E0720055644A /* Slovak_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF51C04E0720055644A /* Slovak_dictionary.txt */; };
+		BB3FAAFE1C04E0720055644A /* Spanish_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB3FAAF61C04E0720055644A /* Spanish_dictionary.txt */; };
 		BB40C8281BDE76140077D6EE /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB40C8271BDE76140077D6EE /* AboutAppViewController.swift */; };
 		BB4C15121BE2793F001C5DD8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4C15111BE2793F001C5DD8 /* MainTabBarController.swift */; };
 		BB6357611BF259B500D064C2 /* MonoalphabeticCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6357601BF259B500D064C2 /* MonoalphabeticCrack.m */; };
@@ -32,7 +40,6 @@
 		BB8B7E101C03680C0039213B /* French.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E0B1C03680C0039213B /* French.xml */; };
 		BB8B7E111C03680C0039213B /* German.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E0C1C03680C0039213B /* German.xml */; };
 		BB8B7E121C03680C0039213B /* Spanish.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E0D1C03680C0039213B /* Spanish.xml */; };
-		BB8B7E141C03681B0039213B /* English_dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E131C03681B0039213B /* English_dictionary.txt */; };
 		BB8BD7A51BD26A4B0020D7F8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BB8BD7A41BD26A4B0020D7F8 /* background.png */; };
 		BB8EDC6D1B904CAC00C8DE10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8EDC6B1B904CAC00C8DE10 /* LaunchScreen.xib */; };
 		BB9219E91BFDDC2D00840B98 /* Explanations in Resources */ = {isa = PBXBuildFile; fileRef = BB9219E81BFDDC2D00840B98 /* Explanations */; };
@@ -83,6 +90,14 @@
 		BB14B56C1AAB868900DBA610 /* EncryptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncryptionViewController.swift; path = ViewControllers/EncryptionViewController.swift; sourceTree = "<group>"; };
 		BB14B56D1AAB868900DBA610 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		BB14B5AA1AAB875B00DBA610 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
+		BB3FAAEF1C04E0720055644A /* Czech_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Czech_dictionary.txt; path = Storage/Dictionary/Czech_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF01C04E0720055644A /* English_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = English_dictionary.txt; path = Storage/Dictionary/English_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF11C04E0720055644A /* French_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = French_dictionary.txt; path = Storage/Dictionary/French_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF21C04E0720055644A /* German_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = German_dictionary.txt; path = Storage/Dictionary/German_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF31C04E0720055644A /* Italian_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Italian_dictionary.txt; path = Storage/Dictionary/Italian_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF41C04E0720055644A /* Polish_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Polish_dictionary.txt; path = Storage/Dictionary/Polish_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF51C04E0720055644A /* Slovak_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Slovak_dictionary.txt; path = Storage/Dictionary/Slovak_dictionary.txt; sourceTree = "<group>"; };
+		BB3FAAF61C04E0720055644A /* Spanish_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Spanish_dictionary.txt; path = Storage/Dictionary/Spanish_dictionary.txt; sourceTree = "<group>"; };
 		BB40C8271BDE76140077D6EE /* AboutAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutAppViewController.swift; path = ViewControllers/AboutAppViewController.swift; sourceTree = "<group>"; };
 		BB4C15111BE2793F001C5DD8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ViewControllers/MainTabBarController.swift; sourceTree = "<group>"; };
 		BB63575F1BF259B500D064C2 /* MonoalphabeticCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonoalphabeticCrack.h; path = Cracking/MonoalphabeticCrack.h; sourceTree = "<group>"; };
@@ -95,7 +110,6 @@
 		BB8B7E0B1C03680C0039213B /* French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = French.xml; path = Storage/Languages/French.xml; sourceTree = "<group>"; };
 		BB8B7E0C1C03680C0039213B /* German.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = German.xml; path = Storage/Languages/German.xml; sourceTree = "<group>"; };
 		BB8B7E0D1C03680C0039213B /* Spanish.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Spanish.xml; path = Storage/Languages/Spanish.xml; sourceTree = "<group>"; };
-		BB8B7E131C03681B0039213B /* English_dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = English_dictionary.txt; path = Storage/Dictionary/English_dictionary.txt; sourceTree = "<group>"; };
 		BB8BD7A41BD26A4B0020D7F8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Supporting Files/Images/background.png"; sourceTree = "<group>"; };
 		BB8EDC6C1B904CAC00C8DE10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Cryptanalysis/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BB9219E81BFDDC2D00840B98 /* Explanations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Explanations; sourceTree = "<group>"; };
@@ -257,7 +271,14 @@
 		BB8B7E071C0367E70039213B /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				BB8B7E131C03681B0039213B /* English_dictionary.txt */,
+				BB3FAAEF1C04E0720055644A /* Czech_dictionary.txt */,
+				BB3FAAF01C04E0720055644A /* English_dictionary.txt */,
+				BB3FAAF11C04E0720055644A /* French_dictionary.txt */,
+				BB3FAAF21C04E0720055644A /* German_dictionary.txt */,
+				BB3FAAF31C04E0720055644A /* Italian_dictionary.txt */,
+				BB3FAAF41C04E0720055644A /* Polish_dictionary.txt */,
+				BB3FAAF51C04E0720055644A /* Slovak_dictionary.txt */,
+				BB3FAAF61C04E0720055644A /* Spanish_dictionary.txt */,
 			);
 			name = Dictionary;
 			sourceTree = "<group>";
@@ -380,12 +401,19 @@
 			files = (
 				BB14B5291AAB826000DBA610 /* Main.storyboard in Resources */,
 				BB8B7E0E1C03680C0039213B /* Czech.xml in Resources */,
+				BB3FAAFA1C04E0720055644A /* German_dictionary.txt in Resources */,
+				BB3FAAFE1C04E0720055644A /* Spanish_dictionary.txt in Resources */,
+				BB3FAAFD1C04E0720055644A /* Slovak_dictionary.txt in Resources */,
+				BB3FAAFB1C04E0720055644A /* Italian_dictionary.txt in Resources */,
 				BB8B7E0F1C03680C0039213B /* English.xml in Resources */,
 				BB8EDC6D1B904CAC00C8DE10 /* LaunchScreen.xib in Resources */,
 				BB8B7E121C03680C0039213B /* Spanish.xml in Resources */,
+				BB3FAAFC1C04E0720055644A /* Polish_dictionary.txt in Resources */,
 				BB9219E91BFDDC2D00840B98 /* Explanations in Resources */,
-				BB8B7E141C03681B0039213B /* English_dictionary.txt in Resources */,
+				BB3FAAF91C04E0720055644A /* French_dictionary.txt in Resources */,
 				BB8BD7A51BD26A4B0020D7F8 /* background.png in Resources */,
+				BB3FAAF81C04E0720055644A /* English_dictionary.txt in Resources */,
+				BB3FAAF71C04E0720055644A /* Czech_dictionary.txt in Resources */,
 				BB14B52B1AAB826000DBA610 /* Images.xcassets in Resources */,
 				BB8B7E101C03680C0039213B /* French.xml in Resources */,
 				BB8B7E111C03680C0039213B /* German.xml in Resources */,

@@ -4,15 +4,15 @@
 
 // returns lowercased parameter string with letters only ('a' - 'z')
 + (NSString *)normalize:(NSString *)string;
+// removes white spaces and break lines in the end of given string
 + (NSString *)removeWhiteEnd:(NSString *)string;
+// á, ä -> a   etc..
 + (NSString *)rewriteTextToASCIIChars:(NSString *)text;
 
 // allowed: numbers, space, dot, coma
 + (bool)isAllowedSymbol:(char)symbol;
 
-
-// returns array with numbers of occurrences for
-// each letter ([0] is for 'a', [25] for 'z')
+// returns array with numbers of occurrences for each letter ([0] is for 'a', [25] for 'z')
 + (NSArray *)lettersCount:(NSString *)string;
 + (NSArray *)lettersFrequency:(NSString *)string;
 + (NSDictionary *)frequencyDictionary:(NSArray *)frequency;
