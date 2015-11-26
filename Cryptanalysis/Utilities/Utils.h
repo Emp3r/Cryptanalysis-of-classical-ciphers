@@ -4,6 +4,10 @@
 
 // returns lowercased parameter string with letters only ('a' - 'z')
 + (NSString *)normalize:(NSString *)string;
++ (NSString *)normalizeLeaveSpaces:(NSString *)string;
+// removes every match of given regex
++ (NSString *)normalize:(NSString *)string removeMatches:(NSString *)regex;
+
 // removes white spaces and break lines in the end of given string
 + (NSString *)removeWhiteEnd:(NSString *)string;
 // á, ä -> a   etc..

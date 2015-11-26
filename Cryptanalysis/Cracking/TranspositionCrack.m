@@ -2,7 +2,9 @@
 #import "Transposition.h"
 #import "Utils.h"
 #import "Language.h"
+#import "Storage.h"
 #import "Combinatorics.h"
+#import "FileReader.h"
 
 @implementation TranspositionCrack
 
@@ -11,22 +13,31 @@
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text {
 
     text = [Utils normalize:text];
-    NSArray * possibleKeys = [TranspositionCrack getAllKeysForText:text maxLength:8];
+    NSArray * keys = [TranspositionCrack getAllKeysForText:text maxLength:7];
+    NSString * bestGuess = [TranspositionCrack findMostProbableKeyForText:text
+                                                                 fromKeys:keys];
+    
+    return bestGuess;
+}
+
++ (NSString *)findMostProbableKeyForText:(NSString *)text fromKeys:(NSArray *)keys {
+    
     NSString * bestGuess = @"a";
     int bestValue = 0;
     
-    for (NSString * key in possibleKeys) {
-        NSString * decrypted = [Transposition decrypt:text with:key];
-        int realWordsCount = [Utils realWordsCount:decrypted];
-        
-        if (realWordsCount > bestValue) {
-            bestValue = realWordsCount;
-            bestGuess = key;
+    for (NSString * key in keys) {
+        @autoreleasepool {
+            NSString * decrypted = [Transposition decrypt:text with:key];
+            int realWordsCount = [Utils realWordsCount:decrypted];
+            
+            if (realWordsCount > bestValue) {
+                bestValue = realWordsCount;
+                bestGuess = key;
+            }
         }
     }
     return bestGuess;
 }
-
 
 + (NSArray *)getAllKeysForText:(NSString *)text maxLength:(int)maxLength {
     
@@ -82,7 +93,6 @@
     NSArray * keyLengths = [Utils getDivisors:[text length] min:4 max:12];
     NSMutableDictionary * pairs = [[NSMutableDictionary alloc] init];
     
-    int i = 0;
     for (NSNumber * keyLength in keyLengths) {
         @autoreleasepool {
             int columns = ceil((float)[text length] / [keyLength intValue]);
@@ -90,7 +100,6 @@
             NSArray * textRows = [Transposition readColumnsFrom:textColumns length:columns];
             NSArray * words = [TranspositionCrack getAllWordsOfLength:[keyLength intValue]];
             
-            if (i == 1) {
             for (NSString * row in textRows) {
                 @autoreleasepool {
                     for (NSString * word in words)
@@ -98,21 +107,12 @@
                             [pairs setObject:row forKey:word];
                 }
             }
-            }
         }
-        i++;
     }
-    
     NSArray * keys = [TranspositionCrack makeKeysFromPairs:pairs];
     
-    // order by probability
-    //
-    
-    
-    return nil;
+    return [TranspositionCrack findMostProbableKeyForText:text fromKeys:keys];
 }
-
-
 
 + (NSArray *)makeKeysFromPairs:(NSDictionary *)pairs {
     
@@ -191,10 +191,7 @@
 + (NSArray *)getAllWordsOfLength:(int)length {
     
     NSMutableArray * words = [[NSMutableArray alloc] init];
-    NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
-    NSString * fileName = [NSString stringWithFormat:@"%@_dictionary", lang];
-    NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
-    FileReader * reader = [[FileReader alloc] initWithFilePath:path];
+    FileReader * reader = [Storage getDictionaryFileReader];
     
     NSString * line = nil;
     while ((line = [reader readLine])) {
@@ -209,15 +206,6 @@
                   [NSPredicate predicateWithFormat:@"length == %@", length]] mutableCopy];
     
     return words;
-}
-
-+ (FileReader *)getDictionaryFileReader {
-    
-    NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
-    NSString * fileName = [NSString stringWithFormat:@"%@_dictionary", lang];
-    NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
-    
-    return [[FileReader alloc] initWithFilePath:path];
 }
 
 

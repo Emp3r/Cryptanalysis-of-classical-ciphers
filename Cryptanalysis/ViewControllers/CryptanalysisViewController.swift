@@ -21,6 +21,7 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
         let text = txtToCrack.text
         
         if !text.isEmpty {
+            // start loader animation?
             let keyGuess = chosenAttackFunction(text)
             
             keyView.alpha = 0
@@ -129,7 +130,7 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
             // chosenAttackFunction = VigenereCrack.breakWithLetterFrequency
         case 3:
             switch chosenAttack {
-            // case 0: chosenAttackFunction = TranspositionCrack.findWordKeyGuess
+            case 0: chosenAttackFunction = TranspositionCrack.findingWordKeyGuess
             case 1: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyGuess
             default: chosenAttackFunction = TranspositionCrack.realWordsAnalysisKeyGuess
             }

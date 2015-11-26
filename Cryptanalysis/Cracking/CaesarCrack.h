@@ -29,11 +29,9 @@
 
 + (NSArray *)mapCharsToCombinations:(NSArray *)chars indexes:(NSArray *)indexes;
 
-
 + (NSDictionary *)mostUsedChars:(NSArray *)frequency size:(int)size;
 
 + (NSDictionary *)leastUsedChars:(NSArray *)frequency size:(int)size;
-
 
 + (int)minimalDistanceOfFirstChars:(NSString *)firstString and:(NSString *)secondString;
 

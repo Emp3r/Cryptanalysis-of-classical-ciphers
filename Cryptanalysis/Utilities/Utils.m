@@ -6,17 +6,28 @@
 
 
 + (NSString *)normalize:(NSString *)string; {
-    
+    /*
     string = [string lowercaseString];
     NSMutableString *result = [NSMutableString string];
-    
     for (int i = 0; i < [string length]; i++) {
         char letter = [string characterAtIndex:i];
-        
-        if (letter >= 'a' && letter <= 'z')
-            [result appendFormat:@"%c", letter];
+        if (letter >= 'a' && letter <= 'z') [result appendFormat:@"%c", letter];
     }
     return result;
+     */
+    return [Utils normalize:string removeMatches:@"[^a-zA-Z]"];
+}
+
++ (NSString *)normalizeLeaveSpaces:(NSString *)string {
+    return [Utils normalize:string removeMatches:@"[^a-zA-Z\\s]"];
+}
+
++ (NSString *)normalize:(NSString *)string removeMatches:(NSString *)regex {
+    string = [string lowercaseString];
+    return [string stringByReplacingOccurrencesOfString: regex
+                                             withString: @""
+                                                options: NSRegularExpressionSearch
+                                                  range: NSMakeRange(0, [string length])];
 }
 
 + (NSString *)removeWhiteEnd:(NSString *)string {

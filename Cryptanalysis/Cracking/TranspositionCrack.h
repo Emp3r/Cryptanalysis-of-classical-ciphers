@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
-#import "FileReader.h"
 
 @interface TranspositionCrack : NSObject
 
 // brute force - real words count
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;
+
++ (NSString *)findMostProbableKeyForText:(NSString *)text fromKeys:(NSArray *)keys;
 
 + (NSArray *)getAllKeysForText:(NSString *)text maxLength:(int)maxLength;
 
@@ -25,8 +26,6 @@
 + (void)getPermutations:(NSString *)word current:(int)current positions:(NSDictionary *)positions visited:(NSArray *)visited result:(NSMutableArray **)result;
 
 + (NSArray *)getAllWordsOfLength:(int)lengths;
-
-+ (FileReader *)getDictionaryFileReader;
 
 + (bool)hasSameChars:(NSString *)string1 and:(NSString *)string2;
 

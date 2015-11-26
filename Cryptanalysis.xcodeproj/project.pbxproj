@@ -35,6 +35,16 @@
 		BB6357611BF259B500D064C2 /* MonoalphabeticCrack.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6357601BF259B500D064C2 /* MonoalphabeticCrack.m */; };
 		BB6A0BE11BD576F5006ABC84 /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6A0BE01BD576F5006ABC84 /* LanguagesTableViewController.swift */; };
 		BB7846131BAB186C00469F7C /* LanguageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7846121BAB186C00469F7C /* LanguageParser.m */; };
+		BB7F2B991C0725CE004E5228 /* Czech_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B911C0725CE004E5228 /* Czech_unique.txt */; };
+		BB7F2B9A1C0725CE004E5228 /* English_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B921C0725CE004E5228 /* English_unique.txt */; };
+		BB7F2B9B1C0725CE004E5228 /* French_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B931C0725CE004E5228 /* French_unique.txt */; };
+		BB7F2B9C1C0725CE004E5228 /* German_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B941C0725CE004E5228 /* German_unique.txt */; };
+		BB7F2B9D1C0725CE004E5228 /* Italian_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B951C0725CE004E5228 /* Italian_unique.txt */; };
+		BB7F2B9E1C0725CE004E5228 /* Polish_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B961C0725CE004E5228 /* Polish_unique.txt */; };
+		BB7F2B9F1C0725CE004E5228 /* Slovak_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B971C0725CE004E5228 /* Slovak_unique.txt */; };
+		BB7F2BA01C0725CE004E5228 /* Spanish_unique.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2B981C0725CE004E5228 /* Spanish_unique.txt */; };
+		BB7F2BA31C0754F4004E5228 /* dictionary_filter.awk in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2BA11C0754F4004E5228 /* dictionary_filter.awk */; };
+		BB7F2BA41C0754F4004E5228 /* unique_filter.awk in Resources */ = {isa = PBXBuildFile; fileRef = BB7F2BA21C0754F4004E5228 /* unique_filter.awk */; };
 		BB8B7E0E1C03680C0039213B /* Czech.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E091C03680C0039213B /* Czech.xml */; };
 		BB8B7E0F1C03680C0039213B /* English.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E0A1C03680C0039213B /* English.xml */; };
 		BB8B7E101C03680C0039213B /* French.xml in Resources */ = {isa = PBXBuildFile; fileRef = BB8B7E0B1C03680C0039213B /* French.xml */; };
@@ -105,6 +115,16 @@
 		BB6A0BE01BD576F5006ABC84 /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = ViewControllers/LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		BB7846111BAB186C00469F7C /* LanguageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LanguageParser.h; path = Utilities/LanguageParser.h; sourceTree = "<group>"; };
 		BB7846121BAB186C00469F7C /* LanguageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LanguageParser.m; path = Utilities/LanguageParser.m; sourceTree = "<group>"; };
+		BB7F2B911C0725CE004E5228 /* Czech_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Czech_unique.txt; path = Storage/Unique/Czech_unique.txt; sourceTree = "<group>"; };
+		BB7F2B921C0725CE004E5228 /* English_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = English_unique.txt; path = Storage/Unique/English_unique.txt; sourceTree = "<group>"; };
+		BB7F2B931C0725CE004E5228 /* French_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = French_unique.txt; path = Storage/Unique/French_unique.txt; sourceTree = "<group>"; };
+		BB7F2B941C0725CE004E5228 /* German_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = German_unique.txt; path = Storage/Unique/German_unique.txt; sourceTree = "<group>"; };
+		BB7F2B951C0725CE004E5228 /* Italian_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Italian_unique.txt; path = Storage/Unique/Italian_unique.txt; sourceTree = "<group>"; };
+		BB7F2B961C0725CE004E5228 /* Polish_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Polish_unique.txt; path = Storage/Unique/Polish_unique.txt; sourceTree = "<group>"; };
+		BB7F2B971C0725CE004E5228 /* Slovak_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Slovak_unique.txt; path = Storage/Unique/Slovak_unique.txt; sourceTree = "<group>"; };
+		BB7F2B981C0725CE004E5228 /* Spanish_unique.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Spanish_unique.txt; path = Storage/Unique/Spanish_unique.txt; sourceTree = "<group>"; };
+		BB7F2BA11C0754F4004E5228 /* dictionary_filter.awk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dictionary_filter.awk; path = "Supporting Files/dictionary_filter.awk"; sourceTree = "<group>"; };
+		BB7F2BA21C0754F4004E5228 /* unique_filter.awk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = unique_filter.awk; path = "Supporting Files/unique_filter.awk"; sourceTree = "<group>"; };
 		BB8B7E091C03680C0039213B /* Czech.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Czech.xml; path = Storage/Languages/Czech.xml; sourceTree = "<group>"; };
 		BB8B7E0A1C03680C0039213B /* English.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English.xml; path = Storage/Languages/English.xml; sourceTree = "<group>"; };
 		BB8B7E0B1C03680C0039213B /* French.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = French.xml; path = Storage/Languages/French.xml; sourceTree = "<group>"; };
@@ -183,6 +203,8 @@
 		BB14B51F1AAB826000DBA610 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB7F2BA11C0754F4004E5228 /* dictionary_filter.awk */,
+				BB7F2BA21C0754F4004E5228 /* unique_filter.awk */,
 				BB14B5AA1AAB875B00DBA610 /* Bridging-Header.h */,
 				BB14B5481AAB847F00DBA610 /* Info.plist */,
 				BB8BD7A11BD267310020D7F8 /* Images */,
@@ -268,6 +290,21 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		BB7F2B901C0725A4004E5228 /* Unique */ = {
+			isa = PBXGroup;
+			children = (
+				BB7F2B911C0725CE004E5228 /* Czech_unique.txt */,
+				BB7F2B921C0725CE004E5228 /* English_unique.txt */,
+				BB7F2B931C0725CE004E5228 /* French_unique.txt */,
+				BB7F2B941C0725CE004E5228 /* German_unique.txt */,
+				BB7F2B951C0725CE004E5228 /* Italian_unique.txt */,
+				BB7F2B961C0725CE004E5228 /* Polish_unique.txt */,
+				BB7F2B971C0725CE004E5228 /* Slovak_unique.txt */,
+				BB7F2B981C0725CE004E5228 /* Spanish_unique.txt */,
+			);
+			name = Unique;
+			sourceTree = "<group>";
+		};
 		BB8B7E071C0367E70039213B /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +349,7 @@
 				BBB19DAD1C0334E20048B0E5 /* Storage.m */,
 				BB8B7E081C0367F80039213B /* Languages */,
 				BB8B7E071C0367E70039213B /* Dictionary */,
+				BB7F2B901C0725A4004E5228 /* Unique */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -399,21 +437,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB7F2B991C0725CE004E5228 /* Czech_unique.txt in Resources */,
 				BB14B5291AAB826000DBA610 /* Main.storyboard in Resources */,
 				BB8B7E0E1C03680C0039213B /* Czech.xml in Resources */,
 				BB3FAAFA1C04E0720055644A /* German_dictionary.txt in Resources */,
 				BB3FAAFE1C04E0720055644A /* Spanish_dictionary.txt in Resources */,
 				BB3FAAFD1C04E0720055644A /* Slovak_dictionary.txt in Resources */,
+				BB7F2B9D1C0725CE004E5228 /* Italian_unique.txt in Resources */,
 				BB3FAAFB1C04E0720055644A /* Italian_dictionary.txt in Resources */,
+				BB7F2B9B1C0725CE004E5228 /* French_unique.txt in Resources */,
 				BB8B7E0F1C03680C0039213B /* English.xml in Resources */,
+				BB7F2BA41C0754F4004E5228 /* unique_filter.awk in Resources */,
+				BB7F2BA01C0725CE004E5228 /* Spanish_unique.txt in Resources */,
+				BB7F2B9C1C0725CE004E5228 /* German_unique.txt in Resources */,
 				BB8EDC6D1B904CAC00C8DE10 /* LaunchScreen.xib in Resources */,
+				BB7F2B9E1C0725CE004E5228 /* Polish_unique.txt in Resources */,
 				BB8B7E121C03680C0039213B /* Spanish.xml in Resources */,
 				BB3FAAFC1C04E0720055644A /* Polish_dictionary.txt in Resources */,
 				BB9219E91BFDDC2D00840B98 /* Explanations in Resources */,
 				BB3FAAF91C04E0720055644A /* French_dictionary.txt in Resources */,
+				BB7F2B9F1C0725CE004E5228 /* Slovak_unique.txt in Resources */,
 				BB8BD7A51BD26A4B0020D7F8 /* background.png in Resources */,
+				BB7F2BA31C0754F4004E5228 /* dictionary_filter.awk in Resources */,
 				BB3FAAF81C04E0720055644A /* English_dictionary.txt in Resources */,
 				BB3FAAF71C04E0720055644A /* Czech_dictionary.txt in Resources */,
+				BB7F2B9A1C0725CE004E5228 /* English_unique.txt in Resources */,
 				BB14B52B1AAB826000DBA610 /* Images.xcassets in Resources */,
 				BB8B7E101C03680C0039213B /* French.xml in Resources */,
 				BB8B7E111C03680C0039213B /* German.xml in Resources */,

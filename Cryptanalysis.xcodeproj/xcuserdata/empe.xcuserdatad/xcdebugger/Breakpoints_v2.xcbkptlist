@@ -22,32 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cryptanalysis/Cracking/TranspositionCrack.m"
-            timestampString = "470101058.062886"
+            filePath = "Cryptanalysis/Cracking/MonoalphabeticCrack.m"
+            timestampString = "470241462.86449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "+makeLetterOrdersFromPairs:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cryptanalysis/Cracking/TranspositionCrack.m"
-            timestampString = "470100507.518353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "+makeLetterOrdersFromPairs:"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "+findMatchesWithUniqueWords:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cryptanalysis/Cracking/TranspositionCrack.m"
-            timestampString = "470100507.518353"
+            filePath = "Cryptanalysis/Cracking/MonoalphabeticCrack.m"
+            timestampString = "470241462.86449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "+findingWordKeyGuess:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+findMatchesWithUniqueWords:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cryptanalysis/Cracking/MonoalphabeticCrack.m"
+            timestampString = "470242476.369925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "+findMatchesWithUniqueWords:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

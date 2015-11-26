@@ -2,7 +2,7 @@
 
 @implementation Storage
 
-
+// array of available ciphers and attacks
 + (NSArray *)availableCiphers {
     return @[@"Caesar", @"Vigenère", @"Monoalphabetic", @"Transposition"];
 }
@@ -21,6 +21,25 @@
 
 + (NSArray *)availableAttacksFor:(int)cipherIndex {
     return [Storage availableAttacks][cipherIndex];
+}
+
+
+// file readers
++ (FileReader *)getDictionaryFileReader {
+    NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
+    NSString * fileName = [NSString stringWithFormat:@"%@_dictionary", lang];
+    return [Storage getFileReaderForFile:fileName];
+}
+
++ (FileReader *)getUniqueFileReader {
+    NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
+    NSString * fileName = [NSString stringWithFormat:@"%@_unique", lang];
+    return [Storage getFileReaderForFile:fileName];
+}
+
++ (FileReader *)getFileReaderForFile:(NSString *)fileName {
+    NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
+    return [[FileReader alloc] initWithFilePath:path];
 }
 
 
