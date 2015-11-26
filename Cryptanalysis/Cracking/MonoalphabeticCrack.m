@@ -5,19 +5,11 @@
 #import "Storage.h"
 #import "FileReader.h"
 
-@interface StringPair : NSObject
-    @property (strong) NSString * x;
-    @property (strong) NSString * y;
-@end
-@implementation StringPair
-    @synthesize x, y;
-@end
-
-
 @implementation MonoalphabeticCrack
 
 // unique words attack
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text {
+    // TODO
     return nil;
 }
 
@@ -25,24 +17,18 @@
     
     text = [Utils normalizeLeaveSpaces:text];
     NSMutableDictionary * matches = [[NSMutableDictionary alloc] init];
-    NSMutableArray * m = [[NSMutableArray alloc] init];
-    
     NSArray * words = [text componentsSeparatedByString:@" "];
     NSArray * uniques = [MonoalphabeticCrack getAllUniqueWords];
     
-    for (NSString * u in uniques)
-        [matches setObject:u forKey:[Utils getCanonicalForm:u]];
-    
-    
-    int num = 0;;
+    int num = 0;
     for (NSString * w in words) {
         for (NSString * u in uniques) {
             @autoreleasepool {
-                if ([[Utils getCanonicalForm:w] isEqualToString:[Utils getCanonicalForm:u]]) {
-                    StringPair * newPair = [[StringPair alloc] init];
-                    newPair.x = u, newPair.y = w;
-                    [m addObject:newPair];
-                }
+
+                if ([[Utils getCanonicalForm:w] isEqualToString:[Utils getCanonicalForm:u]])
+                    if (![matches objectForKey:w])
+                        [matches setObject:u forKey:w];
+                
                 num++;
             }
         }
@@ -52,7 +38,41 @@
     
     
     num++;
+    
+    NSLog(@"%@, %d", matches, [matches count]);
+    
+    
+    
     return matches;
+}
+
++ (NSDictionary *)makeSubstitutionTable:(NSString *)word subs:(NSString *)subs {
+    
+    NSMutableDictionary * result = [[NSMutableDictionary alloc] init];
+    int size = MIN([word length], [subs length]);
+    
+    for (int i = 0; i < size; i++) {
+        [result setObject:[NSString stringWithFormat:@"%c", [subs characterAtIndex:i]]
+                   forKey:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]];
+    }
+    return result;
+}
+
++ (bool)hasSameSubstitutionTables:(NSDictionary *)first and:(NSDictionary *)second {
+    
+    for (NSString * f in [first allKeys]) {
+        NSString * value = [first objectForKey:f];
+        NSString * s = [second objectForKey:f];
+        
+        if ((s && [s isEqualToString:value]) ||
+            (!s && ![[second allValues] containsObject:value])) {
+            continue;
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
 }
 
 

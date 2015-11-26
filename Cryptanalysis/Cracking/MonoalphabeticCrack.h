@@ -8,6 +8,11 @@
 
 + (NSDictionary *)findMatchesWithUniqueWords:(NSString *)text;
 
+
++ (NSDictionary *)makeSubstitutionTable:(NSString *)word subs:(NSString *)subs;
+
++ (bool)hasSameSubstitutionTables:(NSDictionary *)first and:(NSDictionary *)second;
+
 + (NSArray *)getAllUniqueWords;
 
 
