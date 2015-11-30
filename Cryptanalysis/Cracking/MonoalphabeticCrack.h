@@ -6,14 +6,17 @@
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text;
 
 
-+ (NSDictionary *)findMatchesWithUniqueWords:(NSString *)text;
++ (NSString *)makeKey:(NSDictionary *)table;
 
++ (NSDictionary *)uniteTables:(NSArray *)tables;
+
++ (NSArray *)findLargestClique:(NSDictionary *)pairs;
+
++ (NSDictionary *)findMatchesWithUniqueWords:(NSArray *)words;
 
 + (NSDictionary *)makeSubstitutionTable:(NSString *)word subs:(NSString *)subs;
 
 + (bool)hasSameSubstitutionTables:(NSDictionary *)first and:(NSDictionary *)second;
-
-+ (NSArray *)getAllUniqueWords;
 
 
 // frequency analysis

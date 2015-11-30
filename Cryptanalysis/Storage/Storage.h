@@ -14,11 +14,16 @@
 
 
 // file readers
-+ (FileReader *)getDictionaryFileReader;
++ (NSArray *)getAllDictionaryWords;
 
-+ (FileReader *)getUniqueFileReader;
++ (NSArray *)getAllUniqueWords;
 
-+ (FileReader *)getFileReaderForFile:(NSString *)fileName;
+
++ (FileReader *)dictionaryFileReader;
+
++ (FileReader *)uniqueFileReader;
+
++ (FileReader *)fileReaderForFile:(NSString *)fileName;
 
 
 @end

@@ -14,13 +14,13 @@
 
     text = [Utils normalize:text];
     NSArray * keys = [TranspositionCrack getAllKeysForText:text maxLength:7];
-    NSString * bestGuess = [TranspositionCrack findMostProbableKeyForText:text
-                                                                 fromKeys:keys];
+    NSString * bestGuess = [TranspositionCrack findMostProbableKey:text
+                                                          fromKeys:keys];
     
     return bestGuess;
 }
 
-+ (NSString *)findMostProbableKeyForText:(NSString *)text fromKeys:(NSArray *)keys {
++ (NSString *)findMostProbableKey:(NSString *)text fromKeys:(NSArray *)keys {
     
     NSString * bestGuess = @"a";
     int bestValue = 0;
@@ -111,7 +111,7 @@
     }
     NSArray * keys = [TranspositionCrack makeKeysFromPairs:pairs];
     
-    return [TranspositionCrack findMostProbableKeyForText:text fromKeys:keys];
+    return [TranspositionCrack findMostProbableKey:text fromKeys:keys];
 }
 
 + (NSArray *)makeKeysFromPairs:(NSDictionary *)pairs {
@@ -191,7 +191,7 @@
 + (NSArray *)getAllWordsOfLength:(int)length {
     
     NSMutableArray * words = [[NSMutableArray alloc] init];
-    FileReader * reader = [Storage getDictionaryFileReader];
+    FileReader * reader = [Storage dictionaryFileReader];
     
     NSString * line = nil;
     while ((line = [reader readLine])) {

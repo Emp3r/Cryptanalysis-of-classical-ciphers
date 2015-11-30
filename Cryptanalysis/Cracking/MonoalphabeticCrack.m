@@ -3,46 +3,106 @@
 #import "Utils.h"
 #import "Language.h"
 #import "Storage.h"
-#import "FileReader.h"
 
 @implementation MonoalphabeticCrack
 
 // unique words attack
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text {
-    // TODO
-    return nil;
-}
-
-+ (NSDictionary *)findMatchesWithUniqueWords:(NSString *)text {
     
     text = [Utils normalizeLeaveSpaces:text];
-    NSMutableDictionary * matches = [[NSMutableDictionary alloc] init];
     NSArray * words = [text componentsSeparatedByString:@" "];
-    NSArray * uniques = [MonoalphabeticCrack getAllUniqueWords];
+    NSDictionary * matches = [MonoalphabeticCrack findMatchesWithUniqueWords:words];
+    NSArray * clique = [MonoalphabeticCrack findLargestClique:matches];
+    NSDictionary * table = [MonoalphabeticCrack uniteTables:clique];
     
-    int num = 0;
-    for (NSString * w in words) {
-        for (NSString * u in uniques) {
-            @autoreleasepool {
+    NSLog(@"\n text length: %d, matches: %d,  clique: %d, united: %d", text.length, matches.count, clique.count, table.count);
+    //NSLog(@"%@", table);
+    
+    //while ([table count] < LETTER_COUNT) {
+        // udělat z table klíč, zašifrovat text, rozdělit text na words a najít všechny slova s jednou hvězdičkou. (pokud žádné nejsou tak break;)
+        // pro všechny slova s jednou * zkusíme najít ve slovníku odpovídající možné slovo X
+        // pokud je slovo X jen jedno, doplníme do table substituci z X
+        
+    //}
+    
+    return [MonoalphabeticCrack makeKey:table];
+}
 
-                if ([[Utils getCanonicalForm:w] isEqualToString:[Utils getCanonicalForm:u]])
-                    if (![matches objectForKey:w])
-                        [matches setObject:u forKey:w];
+
++ (NSString *)makeKey:(NSDictionary *)table {
+    
+    NSMutableString * result = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i < LETTER_COUNT; i++) {
+        NSString * letter = [NSString stringWithFormat:@"%c", ('a' + i)];
+        
+        if ([[table allKeys] containsObject:letter])
+            [result appendString:table[letter]];
+        else
+            [result appendString:@"*"];
+    }
+    return result;
+}
+
+
++ (NSDictionary *)uniteTables:(NSArray *)tables {
+    
+    NSMutableDictionary * unitedTable = [[NSMutableDictionary alloc] init];
+    
+    for (NSDictionary * t in tables)
+        [unitedTable addEntriesFromDictionary:t];
+    
+    return unitedTable;
+}
+
++ (NSArray *)findLargestClique:(NSDictionary *)pairs {
+    
+    NSMutableArray * clique = [[NSMutableArray alloc] init];
+    NSMutableArray * tables = [[NSMutableArray alloc] init];
+    
+    for (NSString * k in [pairs allKeys])
+        [tables addObject:[MonoalphabeticCrack makeSubstitutionTable:k subs:pairs[k]]];
+    
+    for (int i = 0; i < ([tables count] - 1); i++) {
+        @autoreleasepool {
+            NSMutableArray * temp = [NSMutableArray arrayWithObject:tables[i]];
+            
+            for (int j = (i + 1); j < [tables count]; j++) {
+                bool hasSameTable = true;
                 
-                num++;
+                for (NSDictionary * d in temp)
+                    if (![MonoalphabeticCrack hasSameSubstitutionTables:d and:tables[j]])
+                        hasSameTable = false;
+                
+                if (hasSameTable)
+                    [temp addObject:tables[j]];
+            }
+            
+            if ([temp count] > [clique count])
+                clique = [temp copy];
+        }
+    }
+    return clique;
+}
+
+
++ (NSDictionary *)findMatchesWithUniqueWords:(NSArray *)words {
+    
+    NSMutableDictionary * matches = [[NSMutableDictionary alloc] init];
+    NSArray * uniques = [Storage getAllUniqueWords];
+    
+    for (NSString * w in words) {
+        @autoreleasepool {
+            if (![[matches allKeys] containsObject:w]) {
+                for (NSString * u in uniques) {
+                    if ([[Utils getCanonicalForm:w] isEqualToString:[Utils getCanonicalForm:u]]) {
+                        [matches setObject:u forKey:w];
+                        break;
+                    }
+                }
             }
         }
     }
-    // TODO
-    // uncomplete stuff
-    
-    
-    num++;
-    
-    NSLog(@"%@, %d", matches, [matches count]);
-    
-    
-    
     return matches;
 }
 
@@ -73,20 +133,6 @@
         }
     }
     return true;
-}
-
-
-+ (NSArray *)getAllUniqueWords {
-    
-    NSMutableArray * words = [[NSMutableArray alloc] init];
-    FileReader * reader = [Storage getUniqueFileReader];
-    
-    NSString * line = nil;
-    while ((line = [reader readLine])) {
-        line = [Utils removeWhiteEnd:line];
-        [words addObject:line];
-    }
-    return words;
 }
 
 

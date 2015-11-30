@@ -5,7 +5,7 @@
 // brute force - real words count
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;
 
-+ (NSString *)findMostProbableKeyForText:(NSString *)text fromKeys:(NSArray *)keys;
++ (NSString *)findMostProbableKey:(NSString *)text fromKeys:(NSArray *)keys;
 
 + (NSArray *)getAllKeysForText:(NSString *)text maxLength:(int)maxLength;
 

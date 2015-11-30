@@ -1,4 +1,5 @@
 #import "Storage.h"
+#import "Utils.h"
 
 @implementation Storage
 
@@ -25,19 +26,47 @@
 
 
 // file readers
-+ (FileReader *)getDictionaryFileReader {
++ (NSArray *)getAllDictionaryWords {
+    
+    NSMutableArray * words = [[NSMutableArray alloc] init];
+    FileReader * reader = [Storage dictionaryFileReader];
+    
+    NSString * line = nil;
+    while ((line = [reader readLine])) {
+        line = [Utils removeWhiteEnd:line];
+        [words addObject:line];
+    }
+    return words;
+}
+
++ (NSArray *)getAllUniqueWords {
+    
+    NSMutableArray * words = [[NSMutableArray alloc] init];
+    FileReader * reader = [Storage uniqueFileReader];
+    
+    NSString * line = nil;
+    while ((line = [reader readLine])) {
+        line = [Utils removeWhiteEnd:line];
+        [words addObject:line];
+    }
+    return words;
+}
+
+
+
++ (FileReader *)dictionaryFileReader {
     NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
     NSString * fileName = [NSString stringWithFormat:@"%@_dictionary", lang];
-    return [Storage getFileReaderForFile:fileName];
+    return [Storage fileReaderForFile:fileName];
 }
 
-+ (FileReader *)getUniqueFileReader {
++ (FileReader *)uniqueFileReader {
     NSString * lang = [[NSUserDefaults standardUserDefaults] stringForKey:@"language"];
     NSString * fileName = [NSString stringWithFormat:@"%@_unique", lang];
-    return [Storage getFileReaderForFile:fileName];
+    return [Storage fileReaderForFile:fileName];
 }
 
-+ (FileReader *)getFileReaderForFile:(NSString *)fileName {
++ (FileReader *)fileReaderForFile:(NSString *)fileName {
     NSString * path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
     return [[FileReader alloc] initWithFilePath:path];
 }

@@ -1,7 +1,7 @@
 # returns only unique words from dictionary (words with unique canonical form)
 
 BEGIN {
-    maxRows = 2000;
+    maxRows = 500;
     rowsPrinted = 0;
 }
 {
