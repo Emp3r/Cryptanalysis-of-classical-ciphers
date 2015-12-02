@@ -35,8 +35,14 @@
     NSMutableString * result = [NSMutableString string];
     char shifts[LETTER_COUNT];
     
-    for (char i = 0; i < LETTER_COUNT; i++)
-        shifts[[key characterAtIndex:i] - 'a'] = i + 'a';
+    for (char i = 0; i < LETTER_COUNT; i++) shifts[i] = '*';
+    
+    for (char i = 0; i < LETTER_COUNT; i++) {
+        char keyLetter = [key characterAtIndex:i];
+        
+        if (keyLetter >= 'a' && keyLetter <= 'z')
+            shifts[keyLetter - 'a'] = i + 'a';
+    }
     
     for (int i = 0; i < [text length]; i++) {
         char letter = [text characterAtIndex:i];

@@ -126,8 +126,7 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
             default: chosenAttackFunction = VigenereCrack.frequencyAnalysisKeyGuess
             }
         case 2:
-            print("")
-            // chosenAttackFunction = VigenereCrack.breakWithLetterFrequency
+            chosenAttackFunction = MonoalphabeticCrack.uniqueWordsKeyGuess
         case 3:
             switch chosenAttack {
             case 0: chosenAttackFunction = TranspositionCrack.findingWordKeyGuess

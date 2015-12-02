@@ -5,6 +5,7 @@
 // unique words attack
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text;
 
++ (NSArray *)filterArray:(NSArray *)array numberOfUnknownChars:(int)count;
 
 + (NSString *)makeKey:(NSDictionary *)table;
 

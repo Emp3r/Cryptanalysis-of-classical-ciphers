@@ -10,22 +10,77 @@
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text {
     
     text = [Utils normalizeLeaveSpaces:text];
-    NSArray * words = [text componentsSeparatedByString:@" "];
+    NSArray * words = [[NSOrderedSet orderedSetWithArray:[text componentsSeparatedByString:@" "]] array];
     NSDictionary * matches = [MonoalphabeticCrack findMatchesWithUniqueWords:words];
     NSArray * clique = [MonoalphabeticCrack findLargestClique:matches];
     NSDictionary * table = [MonoalphabeticCrack uniteTables:clique];
     
-    NSLog(@"\n text length: %d, matches: %d,  clique: %d, united: %d", text.length, matches.count, clique.count, table.count);
-    //NSLog(@"%@", table);
-    
-    //while ([table count] < LETTER_COUNT) {
-        // udělat z table klíč, zašifrovat text, rozdělit text na words a najít všechny slova s jednou hvězdičkou. (pokud žádné nejsou tak break;)
-        // pro všechny slova s jednou * zkusíme najít ve slovníku odpovídající možné slovo X
-        // pokud je slovo X jen jedno, doplníme do table substituci z X
-        
-    //}
-    
+    while ([table count] < LETTER_COUNT) {
+        @autoreleasepool {
+            int actualSubstitutions = [table count];
+            
+            [MonoalphabeticCrack fillTable:&table fromWords:words];
+                
+            if ([table count] == actualSubstitutions)
+                break;
+        }
+    }
     return [MonoalphabeticCrack makeKey:table];
+}
+
+
++ (void)fillTable:(NSDictionary **)table fromWords:(NSArray *)words {
+    
+    NSString * actualKey = [MonoalphabeticCrack makeKey:*table];
+    NSString * decryptedText = [Monoalphabetic decrypt:[words componentsJoinedByString:@" "] with:actualKey];
+    NSArray * decryptedWords = [decryptedText componentsSeparatedByString:@" "];
+    NSArray * filteredWords = [MonoalphabeticCrack filterArray:decryptedWords numberOfUnknownChars:1];
+    FileReader * reader;
+    NSString * word, * pattern;
+    NSRegularExpression * regex;
+    int actualSubstitutions = [*table count];
+    
+    for (int i = 0; i < [filteredWords count]; i++) {
+        word = filteredWords[i];
+        reader = [Storage dictionaryFileReader];
+        pattern = [NSString stringWithFormat:@"^%@$", [word stringByReplacingOccurrencesOfString:@"*" withString:@"."]];
+        regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
+        
+        NSString * line = nil;
+        while ((line = [reader readLine])) {
+            @autoreleasepool {
+                line = [Utils removeWhiteEnd:line];
+                
+                if ([regex firstMatchInString:line options:0 range:NSMakeRange(0, [line length])]) {
+                    // add substitution to table (if not there) and stop
+                    NSArray * splitted = [word componentsSeparatedByString:@"*"];
+                    int pos = [splitted[0] length];
+                    char original = [words[[decryptedWords indexOfObject:word]] characterAtIndex:pos];
+                    NSString * o = [NSString stringWithFormat:@"%c", original];
+                    NSString * s = [NSString stringWithFormat:@"%c", [line characterAtIndex:pos]];
+                    
+                    if (![[*table allKeys] containsObject:s] && ![[*table allValues] containsObject:o]) {
+                        [*table setValue:o forKey:s];
+                        break;
+                    }
+                }
+            }
+        }
+        if ([*table count] != actualSubstitutions) break;
+    }
+}
+
++ (NSArray *)filterArray:(NSArray *)array numberOfUnknownChars:(int)count {
+    
+    NSMutableArray * filteredArray = [[NSMutableArray alloc] init];
+    NSString * pattern = [NSString stringWithFormat:@"^[^\\*]*(\\*[^\\*]*){%d}$", count];
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
+    
+    for (NSString * word in array)
+        if ([regex firstMatchInString:word options:0 range:NSMakeRange(0, [word length])])
+            [filteredArray addObject:word];
+    
+    return [[NSOrderedSet orderedSetWithArray:filteredArray] array];
 }
 
 
@@ -112,8 +167,8 @@
     int size = MIN([word length], [subs length]);
     
     for (int i = 0; i < size; i++) {
-        [result setObject:[NSString stringWithFormat:@"%c", [subs characterAtIndex:i]]
-                   forKey:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]];
+        [result setObject:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]
+                   forKey:[NSString stringWithFormat:@"%c", [subs characterAtIndex:i]]];
     }
     return result;
 }

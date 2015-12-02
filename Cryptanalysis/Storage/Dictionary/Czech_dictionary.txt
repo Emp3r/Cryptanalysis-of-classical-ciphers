@@ -1975,7 +1975,7 @@ domaci
 osoba
 cerny
 kniha
-huh
+jednotlive
 usa
 tenkrat
 napsat
@@ -2233,7 +2233,7 @@ kocka
 mir
 sraci
 jizni
-rayi
+uprchlik
 volat
 zachod
 hadat
@@ -2596,12 +2596,12 @@ jemu
 pozice
 zaridit
 najdete
-ray
+prosadit
 prepinam
 vule
 profesor
 halo
-whoa
+profese
 ziji
 nehybej
 zmiz
@@ -2621,7 +2621,7 @@ papiry
 nedeli
 vyrazit
 policajt
-grace
+region
 vylez
 nabidku
 nemusel
@@ -2958,7 +2958,7 @@ nebojim
 cetla
 nohama
 abysme
-maggie
+regiony
 smim
 koupim
 tatou
@@ -3026,7 +3026,7 @@ silene
 chleba
 povidej
 sluzbu
-washingtonu
+regionu
 jednat
 cinu
 rodinou
@@ -3260,7 +3260,7 @@ tancit
 diru
 snist
 mlc
-marty
+regionalni
 mleko
 koukat
 mrtev
@@ -3530,7 +3530,6 @@ soustredit
 sladke
 lano
 umru
-with
 zasrana
 wayne
 pravnika
@@ -3659,7 +3658,7 @@ vstup
 velkych
 roberte
 sezen
-get
+tragicky
 dozvedel
 prijdeme
 spolupracovat
@@ -4730,7 +4729,7 @@ poznamky
 snedl
 ackoli
 liso
-sammy
+milostny
 miss
 maminko
 vyzaduje
@@ -4824,7 +4823,7 @@ divkou
 pokousel
 lze
 soukromy
-ronnie
+editovat
 vezmou
 vybrali
 kavy
@@ -5370,7 +5369,7 @@ rameno
 vybuch
 kruty
 tragedie
-side
+vegetarian
 kamaradky
 prisly
 posadka
@@ -5523,7 +5522,7 @@ nehodi
 prisahal
 hanba
 nejoblibenejsi
-romeo
+pocitacova
 panem
 ukolem
 doufala
@@ -5595,10 +5594,10 @@ sleduji
 rusit
 zemetreseni
 iraku
-typek
+gramotnost
 vinci
 pozitivni
-chtei
+finance
 splnit
 cokoladu
 duchy
@@ -5767,7 +5766,7 @@ bezvedomi
 zahranici
 kontrolovat
 tumas
-gino
+primeri
 kopce
 horky
 pripojit
@@ -5866,7 +5865,7 @@ ellie
 srac
 klukovi
 reci
-jay
+vegan
 paru
 povrchu
 hluboce
@@ -6238,7 +6237,7 @@ priroda
 vedes
 zbranemi
 posilam
-was
+vegansky
 dale
 jakykoliv
 metru
@@ -6280,7 +6279,7 @@ vida
 bud
 prestali
 znacku
-want
+nazvanem
 synovec
 stavaji
 zesilel
@@ -6714,9 +6713,9 @@ vdova
 provedla
 spokojena
 vladce
-herr
+prijimaci
 cele
-wong
+prijimat
 srandovni
 reziser
 prekvapit
@@ -6728,8 +6727,8 @@ nevestu
 jedini
 palac
 rocnik
-jill
-jeremy
+uniforma
+marsal
 unos
 stydim
 nespal
@@ -6768,7 +6767,7 @@ vytahnete
 nadseny
 synove
 odnest
-sharon
+ulozit
 pijes
 netyka
 album
@@ -6804,7 +6803,7 @@ porusil
 ztracet
 rodu
 bohyne
-river
+oznamili
 nejvetsim
 neumite
 neuvidi
@@ -7309,7 +7308,7 @@ obleku
 fotak
 magie
 lucky
-heh
+fenomen
 naroda
 stravili
 uctu
@@ -7551,7 +7550,7 @@ obyvatel
 tucet
 zanechal
 kouzelne
-polly
+vegetarianstvi
 parkovisti
 gauci
 schovava
@@ -7858,7 +7857,7 @@ poradna
 zakazane
 uznani
 poradnej
-home
+islam
 nesahejte
 tusim
 vojenska
@@ -7956,7 +7955,7 @@ pronasledovat
 babicky
 pochop
 superman
-curaku
+uprchlici
 kos
 pomohu
 kompletne
@@ -7988,7 +7987,7 @@ jablko
 promluvi
 tot
 tvrdit
-dereku
+podstata
 ztratu
 pravi
 vypil
@@ -8026,7 +8025,7 @@ zdar
 nepritelem
 joseph
 hlasem
-soo
+podstatneho
 zony
 mozno
 kamkoli
@@ -8036,16 +8035,16 @@ kariera
 pobyt
 natalie
 vysilacku
-zmrd
-who
-sean
+psychologie
+reprezentace
+naboru
 vzkazy
 media
 slavy
 zatancovat
 rodin
 nadrz
-cooper
+reprezentovat
 kane
 prochazet
 mliko
@@ -8077,7 +8076,7 @@ novinka
 oblect
 zubu
 hot
-teplous
+zivotopis
 venoval
 bohate
 potvrzeni
@@ -8092,7 +8091,7 @@ podezrele
 vystraseny
 srdecni
 policajta
-dean
+databaze
 posta
 vratme
 ztratis
@@ -8106,7 +8105,7 @@ fotek
 angela
 vepredu
 zabijel
-donno
+rum
 docasne
 padl
 nacasovani
@@ -8511,7 +8510,7 @@ podepis
 ministre
 cokolada
 zdrava
-mayo
+schuze
 zidy
 barbaro
 zkazil
@@ -8766,7 +8765,7 @@ place
 leonarde
 dennisi
 dokoncim
-jonathane
+facto
 odjizdis
 kocar
 ostatne
@@ -8775,7 +8774,7 @@ rusku
 otevrene
 skandal
 ledem
-mei
+provede
 schovavas
 ropy
 svetova
@@ -8799,7 +8798,7 @@ stahnete
 autobuse
 policiste
 sbirku
-edie
+ustanoveni
 zavodu
 nedali
 chovala
@@ -9452,7 +9451,7 @@ klastera
 vyjadril
 away
 olivere
-aarone
+opravil
 toaletu
 tolikrat
 obvinit
@@ -9652,7 +9651,7 @@ zahrada
 kolonie
 urcitou
 fox
-about
+vendeta
 nenechala
 odvedu
 jacob
@@ -9736,7 +9735,7 @@ deku
 pasy
 bordelu
 bonnie
-noahu
+odveta
 ron
 oliver
 amando
@@ -9794,7 +9793,7 @@ dalku
 farmy
 nanic
 nepojedu
-mio
+rozpoutat
 puvodu
 veskera
 vrazil
@@ -9802,14 +9801,14 @@ fotograf
 tahnete
 buck
 vyuziva
-emma
+rozruch
 strategie
 srace
 vzato
 necekej
 porozumet
 dosli
-chen
+vyplenit
 prijmi
 kapesnik
 hlupaka
@@ -9844,7 +9843,7 @@ zaber
 chlapcem
 odposlechu
 vloupal
-heart
+zrucnost
 snazsi
 odpocinku
 zadnyho
@@ -9932,7 +9931,6 @@ uprimnou
 collins
 bradavky
 maniak
-eugene
 vyresil
 rovna
 utokem
@@ -9952,7 +9950,7 @@ manhattanu
 letecke
 oznamil
 nenechate
-maurice
+profil
 dat
 operaci
 louie
@@ -9960,7 +9958,7 @@ neodpovida
 smesna
 nuklearni
 neublizujte
-pto
+umistit
 vydesit
 polibila
 spojil
@@ -9981,7 +9979,6 @@ udrzel
 zeleninu
 ego
 frekvenci
-tell
 barte
 konverzaci
 ucitele
@@ -9996,6 +9993,9 @@ odstupte
 sethe
 balit
 nastvat
+pronese
 hrobe
 ulevilo
 stribro
+prestavba
+vladimir
