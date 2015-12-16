@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Crack.h"
 
-@interface CaesarCrack : NSObject
+@interface CaesarCrack : NSObject <Crack>
 
 // frequency analysis
 + (char)guessKeyLetterFrequency:(NSString *)text;
@@ -21,7 +22,9 @@
 // frequent letters minimal distance attack
 + (NSString *)lettersDistanceKeyGuess:(NSString *)text;
 
-+ (NSArray *)findSameDistanceCombination:(NSArray *)chars in:(NSArray *)combinations;
++ (NSString *)distanceAttackForChars:(NSArray *)charsInText languageChars:(NSArray *)charsInLang k:(int)k n:(int)n;
+
++ (NSArray *)findSameDistanceCombinations:(NSArray *)chars in:(NSArray *)combinations;
 
 + (bool)hasSameMinimalDistance:(NSArray *)array1 and:(NSArray *)array2;
 

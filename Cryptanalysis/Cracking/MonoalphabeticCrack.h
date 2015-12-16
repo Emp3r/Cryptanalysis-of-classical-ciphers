@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Crack.h"
 
-@interface MonoalphabeticCrack : NSObject
+@interface MonoalphabeticCrack : NSObject <Crack>
 
 // unique words attack
 + (NSString *)uniqueWordsKeyGuess:(NSString *)text;

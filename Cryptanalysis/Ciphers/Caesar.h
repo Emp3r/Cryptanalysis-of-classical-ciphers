@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "Cipher.h"
 
-@interface Caesar : Cipher
+@interface Caesar : NSObject <Cipher>
 
 // encryption & decryption
-+ (NSString *)encrypt:(NSString *)text with:(NSString *)key;
++ (NSString *)encrypt:(NSString *)text withKey:(NSString *)key;
 
-+ (NSString *)decrypt:(NSString *)text with:(NSString *)key;
++ (NSString *)decrypt:(NSString *)text withKey:(NSString *)key;
 
 
 + (NSString *)encrypt:(NSString *)text withChar:(char)key;

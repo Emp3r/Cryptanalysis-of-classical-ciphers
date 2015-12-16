@@ -5,12 +5,18 @@
 @implementation Caesar
 
 
-+ (NSString *)encrypt:(NSString *)text with:(NSString *)key {
-    return [Caesar encrypt:text withChar:[key characterAtIndex:0]];
++ (NSString *)encrypt:(NSString *)text withKey:(NSString *)key {
+    if ([key length] > 0)
+        return [Caesar encrypt:text withChar:[key characterAtIndex:0]];
+    else
+        return text;
 }
 
-+ (NSString *)decrypt:(NSString *)text with:(NSString *)key {
-    return [Caesar decrypt:text withChar:[key characterAtIndex:0]];
++ (NSString *)decrypt:(NSString *)text withKey:(NSString *)key {
+    if ([key length] > 0)
+        return [Caesar decrypt:text withChar:[key characterAtIndex:0]];
+    else
+        return text;
 }
 
 

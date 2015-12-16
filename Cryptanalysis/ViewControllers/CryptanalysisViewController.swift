@@ -26,7 +26,7 @@ class CryptanalysisViewController: UIViewController, UITextFieldDelegate {
             
             keyView.alpha = 0
             txtKeyGuess.text = keyGuess
-            txtGuessed.text = chosenCipherClass.decrypt(text, with: keyGuess)
+            txtGuessed.text = chosenCipherClass.decrypt(text, withKey: keyGuess)
         
             txtKeyGuess.userInteractionEnabled = true
             txtGuessed.userInteractionEnabled = true

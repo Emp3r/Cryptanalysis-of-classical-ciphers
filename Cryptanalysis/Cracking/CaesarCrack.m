@@ -6,6 +6,7 @@
 
 @implementation CaesarCrack
 
+
 // frequency analysis
 + (char)guessKeyLetterFrequency:(NSString *)text {
     
@@ -83,19 +84,35 @@
 // frequent letters distance attack
 + (NSString *)lettersDistanceKeyGuess:(NSString *)text {
     
-    int k = 3, n = 7;
+    int k = 3, n = 8;
     
-    NSArray * mostUsedCharsInLang = [[CaesarCrack mostUsedChars:Language.expectedFrequency size:k] allKeys];
-    NSArray * mostUsedCharsInText = [[CaesarCrack mostUsedChars:[Utils lettersFrequency:text] size:n] allKeys];
-    NSArray * mostUsedAllCombinations = [CaesarCrack getCharCombinations:mostUsedCharsInText chose:k from:n];
+    NSString * mostUsedGuess = [CaesarCrack distanceAttackForChars:[[CaesarCrack mostUsedChars:[Utils lettersFrequency:text] size:n] allKeys] languageChars:[[CaesarCrack mostUsedChars:Language.expectedFrequency size:k] allKeys] k:k n:n];
     
-    mostUsedCharsInLang = [mostUsedCharsInLang sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-    mostUsedAllCombinations = [Utils sortNestedArray:mostUsedAllCombinations];
+    NSString * leastUsedGuess = [CaesarCrack distanceAttackForChars:[[CaesarCrack leastUsedChars:[Utils lettersFrequency:text] size:n] allKeys] languageChars:[[CaesarCrack leastUsedChars:Language.expectedFrequency size:6] allKeys] k:k n:n];
     
-    NSArray * found = [CaesarCrack findSameDistanceCombination:mostUsedCharsInLang in:mostUsedAllCombinations];
+    if ([mostUsedGuess isEqualToString:leastUsedGuess]) {
+        return mostUsedGuess;
+    }
+    else {
+        float mostDiff = [Utils frequencyDifference:[Utils lettersFrequency:[Caesar decrypt:text withKey:mostUsedGuess]]];
+        float leastDiff = [Utils frequencyDifference:[Utils lettersFrequency:[Caesar decrypt:text withKey:leastUsedGuess]]];
+        
+        if (mostDiff < leastDiff) return mostUsedGuess;
+        else return leastUsedGuess;
+    }
+}
+
++ (NSString *)distanceAttackForChars:(NSArray *)charsInText languageChars:(NSArray *)charsInLang k:(int)k n:(int)n {
+    
+    NSArray * allCombinations = [CaesarCrack getCharCombinations:charsInText chose:k from:n];
+    
+    charsInLang = [charsInLang sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    allCombinations = [Utils sortNestedArray:allCombinations];
+    
+    NSArray * found = [CaesarCrack findSameDistanceCombinations:charsInLang in:allCombinations];
     
     if ([found count] > 0) {
-        char letter = 'a' + abs([found[0] characterAtIndex:0] - [mostUsedCharsInLang[0] characterAtIndex:0]);
+        char letter = 'a' + abs([found[0] characterAtIndex:0] - [charsInLang[0] characterAtIndex:0]);
         return [NSString stringWithFormat:@"%c", letter];
     } else {
         return @"a";
@@ -103,7 +120,7 @@
 }
 
 
-+ (NSArray *)findSameDistanceCombination:(NSArray *)chars in:(NSArray *)combinations {
++ (NSArray *)findSameDistanceCombinations:(NSArray *)chars in:(NSArray *)combinations {
     
     NSArray * result = [[NSMutableArray alloc] init];
     
@@ -220,6 +237,21 @@
     int distance = abs(firstChar - secondChar);
     
     return MIN(distance, LETTER_COUNT - distance);
+}
+
+
+
++ (NSString *)keyGuess:(NSString *)text {
+    return [CaesarCrack frequencyAnalysisKeyGuess:text];
+}
+
++ (NSString *)breakCodedText:(NSString *)text {
+    return [Caesar decrypt:text
+                   withKey:[CaesarCrack keyGuess:text]];
+}
+
++ (bool)isGuessedKey:(NSString *)guess equalToKey:(NSString *)key {
+    return [guess isEqualToString:key];
 }
 
 

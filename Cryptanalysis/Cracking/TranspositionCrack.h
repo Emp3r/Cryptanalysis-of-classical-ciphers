@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Crack.h"
 
-@interface TranspositionCrack : NSObject
+@interface TranspositionCrack : NSObject <Crack>
 
 // brute force - real words count
 + (NSString *)realWordsAnalysisKeyGuess:(NSString *)text;

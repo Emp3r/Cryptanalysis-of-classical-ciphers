@@ -12,7 +12,6 @@
 		BB14B52B1AAB826000DBA610 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB14B52A1AAB826000DBA610 /* Images.xcassets */; };
 		BB14B53A1AAB826100DBA610 /* CryptanalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5391AAB826100DBA610 /* CryptanalysisTests.swift */; };
 		BB14B5581AAB861100DBA610 /* Caesar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B54F1AAB861100DBA610 /* Caesar.m */; };
-		BB14B55A1AAB861100DBA610 /* Cipher.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5511AAB861100DBA610 /* Cipher.m */; };
 		BB14B55C1AAB861100DBA610 /* Monoalphabetic.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5531AAB861100DBA610 /* Monoalphabetic.m */; };
 		BB14B55E1AAB861100DBA610 /* Transposition.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5551AAB861100DBA610 /* Transposition.m */; };
 		BB14B5601AAB861100DBA610 /* Vigenere.m in Sources */ = {isa = PBXBuildFile; fileRef = BB14B5571AAB861100DBA610 /* Vigenere.m */; };
@@ -83,7 +82,6 @@
 		BB14B54E1AAB861100DBA610 /* Caesar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Caesar.h; path = Ciphers/Caesar.h; sourceTree = "<group>"; };
 		BB14B54F1AAB861100DBA610 /* Caesar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Caesar.m; path = Ciphers/Caesar.m; sourceTree = "<group>"; };
 		BB14B5501AAB861100DBA610 /* Cipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cipher.h; path = Ciphers/Cipher.h; sourceTree = "<group>"; };
-		BB14B5511AAB861100DBA610 /* Cipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cipher.m; path = Ciphers/Cipher.m; sourceTree = "<group>"; };
 		BB14B5521AAB861100DBA610 /* Monoalphabetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Monoalphabetic.h; path = Ciphers/Monoalphabetic.h; sourceTree = "<group>"; };
 		BB14B5531AAB861100DBA610 /* Monoalphabetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Monoalphabetic.m; path = Ciphers/Monoalphabetic.m; sourceTree = "<group>"; };
 		BB14B5541AAB861100DBA610 /* Transposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transposition.h; path = Ciphers/Transposition.h; sourceTree = "<group>"; };
@@ -133,6 +131,7 @@
 		BB8BD7A41BD26A4B0020D7F8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Supporting Files/Images/background.png"; sourceTree = "<group>"; };
 		BB8EDC6C1B904CAC00C8DE10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Cryptanalysis/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BB9219E81BFDDC2D00840B98 /* Explanations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Explanations; sourceTree = "<group>"; };
+		BB9599C71C105D200038397C /* Crack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Crack.h; path = Cracking/Crack.h; sourceTree = "<group>"; };
 		BBAD0E5D1BEFA3900070D39F /* TranspositionCrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TranspositionCrack.h; path = Cracking/TranspositionCrack.h; sourceTree = "<group>"; };
 		BBAD0E5E1BEFA3900070D39F /* TranspositionCrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TranspositionCrack.m; path = Cracking/TranspositionCrack.m; sourceTree = "<group>"; };
 		BBAE3C561BFFAE73006C9A47 /* FileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileReader.h; path = Utilities/FileReader.h; sourceTree = "<group>"; };
@@ -207,6 +206,7 @@
 				BB7F2BA21C0754F4004E5228 /* unique_filter.awk */,
 				BB14B5AA1AAB875B00DBA610 /* Bridging-Header.h */,
 				BB14B5481AAB847F00DBA610 /* Info.plist */,
+				BB95E2A91C1493030046760F /* TestingTexts */,
 				BB8BD7A11BD267310020D7F8 /* Images */,
 			);
 			name = "Supporting Files";
@@ -233,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				BB14B5501AAB861100DBA610 /* Cipher.h */,
-				BB14B5511AAB861100DBA610 /* Cipher.m */,
 				BB14B54E1AAB861100DBA610 /* Caesar.h */,
 				BB14B54F1AAB861100DBA610 /* Caesar.m */,
 				BB14B5561AAB861100DBA610 /* Vigenere.h */,
@@ -249,6 +248,7 @@
 		BB14B5441AAB835200DBA610 /* Cracking */ = {
 			isa = PBXGroup;
 			children = (
+				BB9599C71C105D200038397C /* Crack.h */,
 				BB14B5651AAB867200DBA610 /* CaesarCrack.h */,
 				BB14B5661AAB867200DBA610 /* CaesarCrack.m */,
 				BB14B5671AAB867200DBA610 /* VigenereCrack.h */,
@@ -338,6 +338,13 @@
 				BB8BD7A41BD26A4B0020D7F8 /* background.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		BB95E2A91C1493030046760F /* TestingTexts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TestingTexts;
 			sourceTree = "<group>";
 		};
 		BBB19DA91C0334A60048B0E5 /* Storage */ = {
@@ -503,7 +510,6 @@
 				BB14B56F1AAB868900DBA610 /* EncryptionViewController.swift in Sources */,
 				BBAE3C581BFFAE73006C9A47 /* FileReader.m in Sources */,
 				BB14B55E1AAB861100DBA610 /* Transposition.m in Sources */,
-				BB14B55A1AAB861100DBA610 /* Cipher.m in Sources */,
 				BBBC9D371BCD67A3005EFD61 /* ExplanationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

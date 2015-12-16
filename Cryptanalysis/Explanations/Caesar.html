@@ -15,16 +15,35 @@
 
   <h3>Algorithm</h3>
   <img src="./img/Caesar.png" alt="" style="margin-top:16px"><br>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia hic minima iure vel similique animi quam deleniti. Sed, ducimus!</p>
+  <p>Encryption is performed by shifting every letter from plain text by fixed number of positions (key) and rewriting the letter by assigned substitution. Key can be any single character from alphabet (a-z). As shown in the picture, key 'c' shifts text by 2 positions, so every letter 'a' in plain text is rewriten as 'b' in coded text and so on for other letters. Key 'a' means the text shifts by 0 positions, so the text doesn't encrypt at all. For 'z' the text is shifted by 25 positions (also -1).</p>
 
   <h3>Examples</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur vitae neque necessitatibus repudiandae obcaecati.</p>
+  <h4>1. example</h4>
+  <p style="margin-bottom:20px">
+    <strong>Plain text:</strong> "Carpe diem"<br>
+    <strong>Key:</strong> "F"<br>
+    <strong>Coded text:</strong> "HFWUJ INJR"
+  </p>
+  <h4>2. example</h4>
+  <p>
+    <strong>Plain text:</strong> "The only way of finding the limits of the possible is by going beyond them into the impossible"<br>
+    <strong>Key:</strong> "R"<br>
+    <strong>Coded text:</strong> "KYV FECP NRP FW WZEUZEX KYV CZDZKJ FW KYV GFJJZSCV ZJ SP XFZEX SVPFEU KYVD ZEKF KYV ZDGFJJZSCV"
+  </p>
+
+  <h3>Advantages</h3>
+  <p>Encrypting algorithm is quick and easy to understand. Anyone can encrypt or decrypt messages in a few minutes with only pen and paper.</p>
 
   <h3>Weaknesses</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni id atque modi consequatur facere natus rem.</p>
+  <p>Caesar cipher has only 26 different keys (number of letters in alphabet). It's very easy to try all of them and tell which one is correct. Beside that key 'a' leaves the plain text unchanged.</p>
 
   <h3>Cracking</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dignissimos inventore veniam, corrupti odio similique.</p>
+  <h4>Brute force - Frequency analysis</h4>
+  <p>Algorithm decrypts coded text with all 26 keys and calculates which has the most similar letter frequency table with expected plain text frequency. Returns key with the smallest difference.</p>
+
+  <h4>Brute force - Real words count</h4>
+  <p>Algorithm decrypts coded text with all 26 keys and calculates which one counts the most real words. Real words are defined by top used words in chosen language. Returns key with the largest count.</p>
+
 
 </body>
 </html>

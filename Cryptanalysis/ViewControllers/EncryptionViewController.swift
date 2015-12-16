@@ -22,7 +22,7 @@ class EncryptionViewController: UIViewController, UITextFieldDelegate {
         if !txtOpenText.text.isEmpty {
             txtOpenText.text = Utils.rewriteTextToASCIIChars(txtOpenText.text)
             if isKeyValid() {
-                txtCodedText.text = chosenCipherClass.encrypt(txtOpenText.text, with: txtKey.text)
+                txtCodedText.text = chosenCipherClass.encrypt(txtOpenText.text, withKey: txtKey.text)
             }
             keyVisibilityUpdate()
         }
@@ -31,7 +31,7 @@ class EncryptionViewController: UIViewController, UITextFieldDelegate {
     @IBAction func btnDecrypt() {
         if !txtCodedText.text.isEmpty {
             if isKeyValid() {
-                txtOpenText.text = chosenCipherClass.decrypt(txtCodedText.text, with: txtKey.text)
+                txtOpenText.text = chosenCipherClass.decrypt(txtCodedText.text, withKey: txtKey.text)
             }
             keyVisibilityUpdate()
         }

@@ -13,7 +13,7 @@
     NSArray * divisors = [VigenereCrack findDistanceDivisors:text];
     int bestMatch = 0;
     
-    for (int i = 18; i >= 0; i--) {
+    for (int i = [divisors count] - 1; i > 1; i--) {
         int actualValue = [[divisors objectAtIndex:i] intValue];
         
         if (bestMatch < actualValue) {
@@ -32,12 +32,14 @@
     int keyLength = [VigenereCrack guessKeyLength:text];
     
     for (int i = 0; i < keyLength; i++) {
-        NSMutableString * splittedText = [[NSMutableString alloc] init];
-        
-        for (int j = i; j < [text length]; j += keyLength)
-            [splittedText appendFormat:@"%c", [text characterAtIndex:j]];
-        
-        [result addObject:splittedText];
+        @autoreleasepool {
+            NSMutableString * splittedText = [[NSMutableString alloc] init];
+            
+            for (int j = i; j < [text length]; j += keyLength)
+                [splittedText appendFormat:@"%c", [text characterAtIndex:j]];
+            
+            [result addObject:splittedText];
+        }
     }
     return result;
 }
@@ -48,25 +50,27 @@
     NSMutableArray * result = [[Utils makeNumberArrayWith:19] mutableCopy];
     
     for (int i = 0; i < [text length] - 8; i++) {
-        NSString * actualString = [text substringFromIndex:i];
-        
-        for (char j = 7; j >= 4; j--) {
-            NSString * restOfText = [actualString substringFromIndex:j];
-            NSRange range = [restOfText rangeOfString:[actualString substringToIndex:j]];
+        @autoreleasepool {
+            NSString * actualString = [text substringFromIndex:i];
             
-            if (range.location != NSNotFound) {
-                int distance = (int)range.location + j;
+            for (char j = 7; j >= 4; j--) {
+                NSString * restOfText = [actualString substringFromIndex:j];
+                NSRange range = [restOfText rangeOfString:[actualString substringToIndex:j]];
                 
-                for (char k = 2; k <= 20; k++) {
-                    if (distance % k == 0) {
-                        int nextValue = [[result objectAtIndex:k - 2] intValue] + 1;
-                        
-                        [result replaceObjectAtIndex:k - 2
-                                withObject:[NSNumber numberWithInt:nextValue]];
+                if (range.location != NSNotFound) {
+                    int distance = (int)range.location + j;
+                    
+                    for (char k = 2; k <= 20; k++) {
+                        if (distance % k == 0) {
+                            int nextValue = [[result objectAtIndex:k - 2] intValue] + 1;
+                            
+                            [result replaceObjectAtIndex:k - 2
+                                              withObject:@(nextValue)];
+                        }
                     }
+                    i = i + j;
+                    break;
                 }
-                i = i + j;
-                break;
             }
         }
     }
@@ -93,7 +97,7 @@
     
     NSString * keyGuess = [VigenereCrack frequencyAnalysisKeyGuess:text];
     
-    return [Vigenere decrypt:text with:keyGuess];
+    return [Vigenere decrypt:text withKey:keyGuess];
 }
 
 
@@ -112,6 +116,30 @@
     return result;
 }
 
+
+
++ (NSString *)keyGuess:(NSString *)text {
+    return [VigenereCrack frequencyAnalysisKeyGuess:text];
+}
+
++ (NSString *)breakCodedText:(NSString *)text {
+    return [Vigenere decrypt:text
+                     withKey:[VigenereCrack keyGuess:text]];
+}
+
++ (bool)isGuessedKey:(NSString *)guess equalToKey:(NSString *)key {
+    
+    if ([key length] != [guess length])
+        return false;
+    
+    int allowedDifference = ([key length] >= 7) ? 2 : 1;
+    
+    for (int i = 0; i < [key length]; i++)
+        if ([key characterAtIndex:i] != [guess characterAtIndex:i])
+            allowedDifference--;
+    
+    return allowedDifference >= 0;
+}
 
 
 @end

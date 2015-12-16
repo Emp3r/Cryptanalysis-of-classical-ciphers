@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "Crack.h"
 
-@interface VigenereCrack : NSObject
+@interface VigenereCrack : NSObject <Crack>
 
 // key length
 + (int)guessKeyLength:(NSString *)text;

@@ -5,7 +5,7 @@
 @implementation Transposition
 
 
-+ (NSString *)encrypt:(NSString *)text with:(NSString *)key {
++ (NSString *)encrypt:(NSString *)text withKey:(NSString *)key {
     
     text = [Utils normalize:text], key = [Utils normalize:key];
     short keyLength = [key length];
@@ -18,7 +18,7 @@
     return [[columns componentsJoinedByString:@" "] uppercaseString];
 }
 
-+ (NSString *)decrypt:(NSString *)text with:(NSString *)key {
++ (NSString *)decrypt:(NSString *)text withKey:(NSString *)key {
     
     text = [Utils normalize:text], key = [Utils normalize:key];
     short keyLength = [key length];
@@ -135,7 +135,8 @@
 
 + (NSString *)generateRandomKey {
     // generate random string with non-repeating 4-7 chars
-    char keyLength = 4 + arc4random_uniform(4);
+    // char keyLength = 4 + arc4random_uniform(4);
+    char keyLength = 4 + arc4random_uniform(7);
     NSMutableString * result = [NSMutableString string];
     
     for (char i = 0; i < keyLength; i++) {

@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "Cipher.h"
 
-@interface Transposition : Cipher
+@interface Transposition : NSObject <Cipher>
 
 // encryption & decryption
-+ (NSString *)encrypt:(NSString *)text with:(NSString *)key;
++ (NSString *)encrypt:(NSString *)text withKey:(NSString *)key;
 
-+ (NSString *)decrypt:(NSString *)text with:(NSString *)key;
++ (NSString *)decrypt:(NSString *)text withKey:(NSString *)key;
 
 
 // marks each char of key by number (from 0 to n-1), then sorts chars and return their numbers in array

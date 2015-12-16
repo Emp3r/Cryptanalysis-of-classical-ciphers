@@ -17,7 +17,7 @@
     
     while ([table count] < LETTER_COUNT) {
         @autoreleasepool {
-            int actualSubstitutions = [table count];
+            int actualSubstitutions = (int)[table count];
             
             [MonoalphabeticCrack fillTable:&table fromWords:words];
                 
@@ -32,13 +32,13 @@
 + (void)fillTable:(NSDictionary **)table fromWords:(NSArray *)words {
     
     NSString * actualKey = [MonoalphabeticCrack makeKey:*table];
-    NSString * decryptedText = [Monoalphabetic decrypt:[words componentsJoinedByString:@" "] with:actualKey];
+    NSString * decryptedText = [Monoalphabetic decrypt:[words componentsJoinedByString:@" "] withKey:actualKey];
     NSArray * decryptedWords = [decryptedText componentsSeparatedByString:@" "];
     NSArray * filteredWords = [MonoalphabeticCrack filterArray:decryptedWords numberOfUnknownChars:1];
     FileReader * reader;
     NSString * word, * pattern;
     NSRegularExpression * regex;
-    int actualSubstitutions = [*table count];
+    int actualSubstitutions = (int)[*table count];
     
     for (int i = 0; i < [filteredWords count]; i++) {
         word = filteredWords[i];
@@ -52,9 +52,7 @@
                 line = [Utils removeWhiteEnd:line];
                 
                 if ([regex firstMatchInString:line options:0 range:NSMakeRange(0, [line length])]) {
-                    // add substitution to table (if not there) and stop
-                    NSArray * splitted = [word componentsSeparatedByString:@"*"];
-                    int pos = [splitted[0] length];
+                    int pos = (int)[[word componentsSeparatedByString:@"*"][0] length];
                     char original = [words[[decryptedWords indexOfObject:word]] characterAtIndex:pos];
                     NSString * o = [NSString stringWithFormat:@"%c", original];
                     NSString * s = [NSString stringWithFormat:@"%c", [line characterAtIndex:pos]];
@@ -164,7 +162,7 @@
 + (NSDictionary *)makeSubstitutionTable:(NSString *)word subs:(NSString *)subs {
     
     NSMutableDictionary * result = [[NSMutableDictionary alloc] init];
-    int size = MIN([word length], [subs length]);
+    int size = (int)MIN([word length], [subs length]);
     
     for (int i = 0; i < size; i++) {
         [result setObject:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]
@@ -195,30 +193,116 @@
 + (NSString *)frequencyAnalysisKeyGuess:(NSString *)text {
     
     NSMutableArray * result = [[NSMutableArray alloc] init];
-    NSArray * frequency = [Utils lettersFrequency:text];
-    NSArray * expected = Language.expectedFrequency;
-    bool freeLetters[LETTER_COUNT];
-    for (char i = 0; i < LETTER_COUNT; i++) freeLetters[i] = true;
+    NSMutableArray * key = [[Utils makeNumberArrayWith:LETTER_COUNT] mutableCopy];
+    NSMutableArray * frequency = [[Utils lettersFrequency:text] mutableCopy];
+    NSMutableArray * expected = [Language.expectedFrequency mutableCopy];
     
-    NSLog(@"%@ \n %@", frequency, expected);
-    
+    //NSLog(@"freq: %@ \n expe: %@", frequency, Language.expectedFrequency);
+    /*
     for (char i = 0; i < LETTER_COUNT; i++) {
-        float actualLetterFrequency = [frequency[i] floatValue];
-        float smallestDifference = FLT_MAX;
-        char bestLetterGuess = 0;
+        NSNumber * max = [frequency valueForKeyPath:@"@max.self"];
+        int maxIndex = [frequency indexOfObject:max];
         
-        for (char j = 0; j < LETTER_COUNT; j++) {
-            float difference = fabsf(actualLetterFrequency - [expected[j] floatValue]);
+        NSNumber * maxExpected = [expected valueForKeyPath:@"@max.self"];
+        int maxIndexExpected = [expected indexOfObject:maxExpected];
+        
+        result[maxIndexExpected] = [NSString stringWithFormat:@"%c", 'a' + maxIndex];
+        frequency[maxIndex] = @(-1);
+        expected[maxIndexExpected] = @(-1);
+    }
+     */
+    [MonoalphabeticCrack addKeysFromFrequency:frequency expected:expected
+                             resultInProgress:[key mutableCopy] charsLeft:LETTER_COUNT
+                                  finalResult:&result];
+    
+    
+    return [MonoalphabeticCrack findMostProbableKey:text fromKeys:result];
+    
+    
+}
+
++ (NSString *)findMostProbableKey:(NSString *)text fromKeys:(NSArray *)keys {
+    
+    NSString * bestGuess = keys[0];
+    int bestValue = 0;
+    
+    for (NSString * key in keys) {
+        @autoreleasepool {
+            NSString * decrypted = [Monoalphabetic decrypt:text withKey:key];
+            int realWordsCount = [Utils realWordsCount:decrypted];
             
-            if (difference < smallestDifference && freeLetters[j]) {
-                smallestDifference = difference;
-                bestLetterGuess = j;
+            if (realWordsCount > bestValue) {
+                bestValue = realWordsCount;
+                bestGuess = key;
             }
         }
-        freeLetters[bestLetterGuess] = false;
-        [result addObject:[NSString stringWithFormat:@"%c", ('a' + bestLetterGuess)]];
     }
-    return [result componentsJoinedByString:@""];
+    return bestGuess;
+}
+
+
++ (void)addKeysFromFrequency:(NSMutableArray *)freq expected:(NSMutableArray *)exp resultInProgress:(NSMutableArray *)res charsLeft:(int)charsLeft finalResult:(NSMutableArray **)result {
+    
+    for (char i = 0; i < charsLeft; i++) {
+        NSNumber * max = [freq valueForKeyPath:@"@max.self"];
+        int maxIndex = [freq indexOfObject:max];
+        NSNumber * maxExpected = [exp valueForKeyPath:@"@max.self"];
+        int maxIndexExpected = [exp indexOfObject:maxExpected];
+        
+        if (fabs([max floatValue] - [maxExpected floatValue]) > 0.1) {
+            res[maxIndexExpected] = [NSString stringWithFormat:@"%c", 'a' + maxIndex];
+            freq[maxIndex] = @(-1);
+            exp[maxIndexExpected] = @(-1);
+        }
+        else {
+            freq[maxIndex] = @(-1);
+            NSNumber * newMax = [freq valueForKeyPath:@"@max.self"];
+            int newMaxIndex = [freq indexOfObject:newMax];
+            
+            if (maxIndex == newMaxIndex) return;
+            
+            freq[newMaxIndex] = [NSNumber numberWithFloat:[max floatValue] + 2];;
+            freq[maxIndex] = newMax;
+            
+            [MonoalphabeticCrack addKeysFromFrequency:[freq mutableCopy] expected:[exp mutableCopy]
+                                     resultInProgress:[res mutableCopy] charsLeft:(charsLeft - i)
+                                          finalResult:result];
+            
+            res[maxIndexExpected] = [NSString stringWithFormat:@"%c", 'a' + maxIndex];
+            freq[maxIndex] = @(-1);
+            exp[maxIndexExpected] = @(-1);
+        }
+    }
+    
+    [*result addObject:[res componentsJoinedByString:@""]];
+}
+
+
+
+
+
+
++ (NSString *)keyGuess:(NSString *)text {
+    return [MonoalphabeticCrack uniqueWordsKeyGuess:text];
+}
+
++ (NSString *)breakCodedText:(NSString *)text {
+    return [Monoalphabetic decrypt:text
+                           withKey:[MonoalphabeticCrack keyGuess:text]];
+}
+
++ (bool)isGuessedKey:(NSString *)guess equalToKey:(NSString *)key {
+    
+    if ([key length] != [guess length])
+        return false;
+    
+    int allowedDifference = 8;
+    
+    for (int i = 0; i < [key length]; i++)
+        if ([key characterAtIndex:i] != [guess characterAtIndex:i])
+            allowedDifference--;
+    
+    return allowedDifference >= 0;
 }
 
 

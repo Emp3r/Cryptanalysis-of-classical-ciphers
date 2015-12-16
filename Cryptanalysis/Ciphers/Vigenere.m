@@ -5,7 +5,7 @@
 @implementation Vigenere
 
 
-+ (NSString *)encrypt:(NSString *)text with:(NSString *)key {
++ (NSString *)encrypt:(NSString *)text withKey:(NSString *)key {
     
     text = [text lowercaseString];
     key = [Utils normalize:[key lowercaseString]];
@@ -24,7 +24,7 @@
     return [result uppercaseString];
 }
 
-+ (NSString *)decrypt:(NSString *)text with:(NSString *)key {
++ (NSString *)decrypt:(NSString *)text withKey:(NSString *)key {
     
     text = [text lowercaseString];
     key = [Utils normalize:[key lowercaseString]];

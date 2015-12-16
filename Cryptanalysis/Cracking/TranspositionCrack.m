@@ -27,7 +27,7 @@
     
     for (NSString * key in keys) {
         @autoreleasepool {
-            NSString * decrypted = [Transposition decrypt:text with:key];
+            NSString * decrypted = [Transposition decrypt:text withKey:key];
             int realWordsCount = [Utils realWordsCount:decrypted];
             
             if (realWordsCount > bestValue) {
@@ -90,7 +90,7 @@
 + (NSString *)findingWordKeyGuess:(NSString *)text {
     
     text = [Utils normalize:text];
-    NSArray * keyLengths = [Utils getDivisors:[text length] min:4 max:12];
+    NSArray * keyLengths = [Utils getDivisors:(int)[text length] min:4 max:10];
     NSMutableDictionary * pairs = [[NSMutableDictionary alloc] init];
     
     for (NSNumber * keyLength in keyLengths) {
@@ -136,7 +136,7 @@
     NSMutableArray * letterOrders = [[NSMutableArray alloc] init];
     
     for (NSString * key in [pairs allKeys]) {
-        NSDictionary * positions = [TranspositionCrack getLettersPositions:key];
+        NSDictionary * positions = [TranspositionCrack getLettersPositions:pairs[key]];
         NSMutableArray * perms = [[NSMutableArray alloc] init];
         
         [TranspositionCrack getPermutations:key current:0 positions:positions
@@ -193,12 +193,16 @@
     NSMutableArray * words = [[NSMutableArray alloc] init];
     FileReader * reader = [Storage dictionaryFileReader];
     
+    int maxWords = 150; // speed over accuracy, increase for better results
+    int i = 0;
     NSString * line = nil;
-    while ((line = [reader readLine])) {
+    while ((line = [reader readLine]) && i < maxWords) {
         line = [Utils removeWhiteEnd:line];
         
-        if ([line length] == length)
+        if ([line length] == length) {
             [words addObject:line];
+            ++i;
+        }
     }
     
     if ([words count] == 0)
@@ -216,6 +220,25 @@
     return [[[Utils makeCharArrayFrom:string1] sortedArrayUsingSelector:@selector(compare:)]
             isEqualToArray:
             [[Utils makeCharArrayFrom:string2] sortedArrayUsingSelector:@selector(compare:)]];
+}
+
+
+
++ (NSString *)keyGuess:(NSString *)text {
+    return [TranspositionCrack realWordsAnalysisKeyGuess:text];
+}
+
++ (NSString *)breakCodedText:(NSString *)text {
+    return [Transposition decrypt:text
+                          withKey:[TranspositionCrack keyGuess:text]];
+}
+
++ (bool)isGuessedKey:(NSString *)guess equalToKey:(NSString *)key {
+    
+    NSArray * guessOrder = [Transposition makeKeyOrder:guess];
+    NSArray * keyOrder = [Transposition makeKeyOrder:key];
+    
+    return [keyOrder isEqualToArray:guessOrder];
 }
 
 
