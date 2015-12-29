@@ -1,0 +1,104 @@
+\begin{thebibliography}{10}
+
+\bibitem{adams2003}
+Simon Adams.
+\newblock {\em {Šifry a kódy: od hieroglyfů po hackery}}.
+\newblock Slovart, 2003.
+
+\bibitem{cipherdisk}
+Retroworks.
+\newblock {Šifrovací disk k Caesarově šifře}.
+\newblock \url{http://ecx.images-amazon.com/images/I/812GVgp-DSL._SL1500_.jpg}.
+\newblock (Staženo dne: 12. 12. 2015).
+
+\bibitem{singh2009}
+Simon Singh.
+\newblock {\em Kniha kódů a šifer}.
+\newblock Nakladatelství Dokořán, 2009.
+
+\bibitem{stinson2006}
+Douglas~R. Stinson.
+\newblock {\em {Cryptography: Theory and Practice (Third edition)}}.
+\newblock CRC Press, 2006.
+
+\bibitem{caesarwiki-en}
+Wikipedia.
+\newblock Caesar cipher.
+\newblock \url{https://en.wikipedia.org/wiki/Caesar_cipher}, 2015.
+
+\bibitem{cryptographywiki-en}
+Wikipedia.
+\newblock {Cryptography}.
+\newblock \url{https://en.wikipedia.org/wiki/Cryptography}, 2015.
+
+\bibitem{frequencyanalysiswiki}
+Wikipedia.
+\newblock {Frequency analysis}.
+\newblock \url{https://en.wikipedia.org/wiki/Frequency_analysis}, 2015.
+
+\bibitem{letterfrequencywiki}
+Wikipedia.
+\newblock {Letter frequency}.
+\newblock \url{https://en.wikipedia.org/wiki/Letter_frequency}, 2015.
+
+\bibitem{scytalewiki}
+Wikipedia.
+\newblock {Scytale}.
+\newblock \url{https://en.wikipedia.org/wiki/Scytale}, 2015.
+
+\bibitem{transpositionwiki-en}
+Wikipedia.
+\newblock Transposition cipher.
+\newblock \url{https://en.wikipedia.org/wiki/Transposition_cipher}, 2015.
+
+\bibitem{vigenerewiki-en}
+Wikipedia.
+\newblock Vigenère cipher.
+\newblock \url{https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher}, 2015.
+
+\bibitem{caesarwiki}
+Wikipedie.
+\newblock {Caesarova šifra}.
+\newblock \url{https://cs.wikipedia.org/wiki/Caesarova_%C5%A1ifra}, 2015.
+
+\bibitem{columntranspositionwiki}
+Wikipedie.
+\newblock {Jednoduchá sloupcová transpozice}.
+\newblock
+  \url{https://cs.wikipedia.org/wiki/Jednoduchá_sloupcová_transpozice}, 2015.
+
+\bibitem{cryptographywiki}
+Wikipedie.
+\newblock {Kryptografie}.
+\newblock \url{https://cs.wikipedia.org/wiki/Kryptografie}, 2015.
+
+\bibitem{monoalphabeticwiki}
+Wikipedie.
+\newblock {Monoalfabetická šifra}.
+\newblock
+  \url{https://cs.wikipedia.org/wiki/Monoalfabetic%6B%C3%A1_%C5%A1ifra}, 2015.
+
+\bibitem{substitutionwiki}
+Wikipedie.
+\newblock {Substituční šifra}.
+\newblock \url{https://cs.wikipedia.org/wiki/Substitučn%C3%AD_šifra}, 2015.
+
+\bibitem{transpositionwiki}
+Wikipedie.
+\newblock {Transpoziční šifra}.
+\newblock \url{https://cs.wikipedia.org/wiki/Transpozičn%C3%AD_šifra}, 2015.
+
+\bibitem{vigenerewiki}
+Wikipedie.
+\newblock {Vigenèrova šifra}.
+\newblock \url{https://cs.wikipedia.org/wiki/Vigen%C3%A8ro%76a_%C5%A1ifra},
+  2015.
+
+\bibitem{atbashcipher}
+Mysterious Writings.
+\newblock {The Atbash Cipher and Jeremiah 51:1}.
+\newblock
+  \url{http://mysteriouswritings.com/the-atbash-cipher-and-jeremiah-511/},
+  2015.
+
+\end{thebibliography}

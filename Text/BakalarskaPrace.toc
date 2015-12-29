@@ -1,0 +1,86 @@
+\select@language {czech}
+\contentsline {section}{\numberline {1}\IeC {\'U}vod}{9}{section.1}
+\contentsline {subsection}{\numberline {1.1}Definice z\IeC {\'a}kladn\IeC {\'\i }ch pojm\IeC {\r u}}{9}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Kryptografie}{9}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Kryptogranal\IeC {\'y}za}{9}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Kryptologie}{9}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.4}Otev\IeC {\v r}en\IeC {\'y} text}{9}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.5}Za\IeC {\v s}ifrovan\IeC {\'y} text}{10}{subsubsection.1.1.5}
+\contentsline {subsubsection}{\numberline {1.1.6}\IeC {\v S}ifrovac\IeC {\'\i } kl\IeC {\'\i }\IeC {\v c}}{10}{subsubsection.1.1.6}
+\contentsline {subsubsection}{\numberline {1.1.7}\IeC {\v S}ifra}{10}{subsubsection.1.1.7}
+\contentsline {subsubsection}{\numberline {1.1.8}Prolomen\IeC {\'\i } \IeC {\v s}ifry}{10}{subsubsection.1.1.8}
+\contentsline {subsubsection}{\numberline {1.1.9}Frekven\IeC {\v c}n\IeC {\'\i } anal\IeC {\'y}za}{11}{subsubsection.1.1.9}
+\contentsline {subsubsection}{\numberline {1.1.10}Bigramy, trigramy}{11}{subsubsection.1.1.10}
+\contentsline {subsubsection}{\numberline {1.1.11}Steganografie}{11}{subsubsection.1.1.11}
+\contentsline {subsection}{\numberline {1.2}Typy \IeC {\v s}ifer}{11}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Substitu\IeC {\v c}n\IeC {\'\i } \IeC {\v s}ifry}{11}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Transpozi\IeC {\v c}n\IeC {\'\i } \IeC {\v s}ifry}{11}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Kombinovan\IeC {\'e} \IeC {\v s}ifry}{12}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Asymetrick\IeC {\'e} \IeC {\v s}ifry}{12}{subsubsection.1.2.4}
+\contentsline {section}{\numberline {2}Caesarova \IeC {\v s}ifra}{13}{section.2}
+\contentsline {subsection}{\numberline {2.1}Historie}{13}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Popis algoritmu}{13}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}V\IeC {\'y}hody}{14}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Nev\IeC {\'y}hody}{14}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Prolamov\IeC {\'a}n\IeC {\'\i }}{14}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}\IeC {\'U}tok hrubou silou pomoc\IeC {\'\i } frekven\IeC {\v c}n\IeC {\'\i } anal\IeC {\'y}zy}{14}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}\IeC {\'U}tok hrubou silou hled\IeC {\'a}n\IeC {\'\i }m re\IeC {\'a}ln\IeC {\'y}ch slov}{16}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}Troj\IeC {\'u}heln\IeC {\'\i }kov\IeC {\'y} \IeC {\'u}tok}{16}{subsubsection.2.5.3}
+\contentsline {section}{\numberline {3}Vigen\IeC {\`e}rova \IeC {\v s}ifra}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Historie}{18}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Popis algoritmu}{19}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}P\IeC {\v r}\IeC {\'\i }klad}{19}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}V\IeC {\'y}hody}{19}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Nev\IeC {\'y}hody}{20}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Prolamov\IeC {\'a}n\IeC {\'\i }}{20}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Odhadnut\IeC {\'\i } d\IeC {\'e}lky kl\IeC {\'\i }\IeC {\v c}e}{20}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}\IeC {\'U}tok pomoc\IeC {\'\i } frekven\IeC {\v c}n\IeC {\'\i } anal\IeC {\'y}zy}{20}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Troj\IeC {\'u}heln\IeC {\'\i }kov\IeC {\'y} \IeC {\'u}tok}{22}{subsubsection.3.5.3}
+\contentsline {section}{\numberline {4}Obecn\IeC {\'a} monoalfabetick\IeC {\'a} \IeC {\v s}ifra}{23}{section.4}
+\contentsline {subsection}{\numberline {4.1}Historie}{23}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Popis algoritmu}{23}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}P\IeC {\v r}\IeC {\'\i }klad}{23}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Dopln\IeC {\v e}n\IeC {\'\i } p\IeC {\'\i }smen do \IeC {\v s}ifrovac\IeC {\'\i } abecedy}{24}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}V\IeC {\'y}hody}{24}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Nev\IeC {\'y}hody}{24}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Prolamov\IeC {\'a}n\IeC {\'\i }}{24}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.5.1}\IeC {\'U}tok hled\IeC {\'a}n\IeC {\'\i }m unik\IeC {\'a}tn\IeC {\'\i }ch slov}{24}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\numberline {4.5.2}\IeC {\'U}tok pomoc\IeC {\'\i } frekven\IeC {\v c}n\IeC {\'\i } anal\IeC {\'y}zy}{25}{subsubsection.4.5.2}
+\contentsline {section}{\numberline {5}Sloupcov\IeC {\'a} transpozice}{26}{section.5}
+\contentsline {subsection}{\numberline {5.1}Historie}{26}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Popis algoritmu}{26}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}P\IeC {\v r}\IeC {\'\i }klad}{26}{subsubsection.5.2.1}
+\contentsline {subsection}{\numberline {5.3}V\IeC {\'y}hody}{27}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Nev\IeC {\'y}hody}{27}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Prolamov\IeC {\'a}n\IeC {\'\i }}{28}{subsection.5.5}
+\contentsline {subsubsection}{\numberline {5.5.1}\IeC {\'U}tok nalezen\IeC {\'\i }m slova v \IeC {\v r}\IeC {\'a}dku}{28}{subsubsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.2}\IeC {\'U}tok hrubou silou pomoc\IeC {\'\i } re\IeC {\'a}ln\IeC {\'y}ch slov}{28}{subsubsection.5.5.2}
+\contentsline {subsection}{\numberline {5.6}Variace sloupcov\IeC {\'e} transpozice}{30}{subsection.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}Jednoduch\IeC {\'a} sloupcov\IeC {\'a} transpozice s ne\IeC {\'u}plnou tabulkou}{30}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}Dvojit\IeC {\'a} sloupcov\IeC {\'a} transpozice}{30}{subsubsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.3}Myszkowskiho transpozice}{30}{subsubsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.4}Transpozi\IeC {\v c}n\IeC {\'\i } m\IeC {\v r}\IeC {\'\i }\IeC {\v z}ka}{30}{subsubsection.5.6.4}
+\contentsline {subsubsection}{\numberline {5.6.5}Primitivn\IeC {\'\i } transpozice}{31}{subsubsection.5.6.5}
+\contentsline {section}{\numberline {6}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }ru\IeC {\v c}ka}{32}{section.6}
+\contentsline {subsection}{\numberline {6.1}Kryptografick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{32}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}P\IeC {\v r}\IeC {\'\i }klad pou\IeC {\v z}it\IeC {\'\i }}{33}{subsubsection.6.1.1}
+\contentsline {subsection}{\numberline {6.2}Kryptoanalytick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{33}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}P\IeC {\v r}\IeC {\'\i }klad pou\IeC {\v z}it\IeC {\'\i }}{34}{subsubsection.6.2.1}
+\contentsline {subsection}{\numberline {6.3}U\IeC {\v c}ebn\IeC {\'\i } \IeC {\v c}\IeC {\'a}st}{34}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Nastaven\IeC {\'\i }}{35}{subsection.6.4}
+\contentsline {section}{\numberline {7}Dokumentace zdrojov\IeC {\'e}ho k\IeC {\'o}du}{37}{section.7}
+\contentsline {subsection}{\numberline {7.1}Ciphers}{37}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Cracking}{37}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Utilities}{37}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Storage}{37}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Explanations}{38}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}ViewControllers}{38}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}Supporting Files}{38}{subsection.7.7}
+\contentsline {section}{\numberline {8}Dodatky}{38}{section.8}
+\contentsline {section}{Z\'av\v er}{39}{section*.4}
+\select@language {czech}
+\select@language {czech}
+\contentsline {section}{Conclusion}{40}{section*.6}
+\select@language {english}
+\select@language {czech}
+\contentsline {section}{\numberline {A}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{41}{appendix.A}
